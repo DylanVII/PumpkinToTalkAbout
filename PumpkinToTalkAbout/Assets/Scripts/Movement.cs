@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
 
     private Vector2 lastRecordedInput;
     private Vector2 inputSpeed = Vector2.zero;
-    private Rigidbody2D rigBod;
+    private Rigidbody rigBod;
     [SerializeField]
     private float accelTime;
     [SerializeField]
@@ -20,13 +20,13 @@ public class Movement : MonoBehaviour
 
     public int playerNum;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        rigBod = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    public void PlayerMovementUpdate()
+    public void MovementUpdate()
     {
         //General Movement (Keyboard)
         input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
     }
 
 
-    public void PlayerMovementFixedUpdate()
+    public void MovementFixedUpdate()
     {
         float acceleration = maxSpeed / accelTime * Time.fixedDeltaTime;
         float deceleration = maxSpeed / decelTime * Time.fixedDeltaTime;
