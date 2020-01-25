@@ -7,10 +7,10 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     private float maxSpeed;
-    public Vector2 input;
+    public Vector3 input;
 
-    private Vector2 lastRecordedInput;
-    private Vector2 inputSpeed = Vector2.zero;
+    private Vector3 lastRecordedInput;
+    private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
     [SerializeField]
     private float accelTime;
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
     {
         //General Movement (Keyboard)
         input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);
-        input.y = Input.GetAxisRaw("VerticalK_P" + playerNum);
+        input.z = Input.GetAxisRaw("VerticalK_P" + playerNum);
 
 
 
@@ -41,9 +41,9 @@ public class Movement : MonoBehaviour
         {
             lastRecordedInput.x = input.x;
         }
-        if (input.y != 0)
+        if (input.z != 0)
         {
-            lastRecordedInput.y = input.y;
+            lastRecordedInput.z = input.z;
         }
 
 
@@ -63,16 +63,16 @@ public class Movement : MonoBehaviour
         {
             inputSpeed.x = Mathf.Clamp(inputSpeed.x - deceleration, 0, 1);
         }
-        if (input.y != 0)
+        if (input.z != 0)
         {
-            inputSpeed.y = Mathf.Clamp(inputSpeed.y + acceleration, 0, 1);
+            inputSpeed.z = Mathf.Clamp(inputSpeed.z + acceleration, 0, 1);
         }
         else
         {
-            inputSpeed.y = Mathf.Clamp(inputSpeed.y - deceleration, 0, 1);
+            inputSpeed.z = Mathf.Clamp(inputSpeed.z - deceleration, 0, 1);
         }
 
-        Vector2 velocity = new Vector2(lastRecordedInput.x * inputSpeed.x, lastRecordedInput.y * inputSpeed.y);
+        Vector3 velocity = new Vector3(lastRecordedInput.x * inputSpeed.x, 0, lastRecordedInput.z * inputSpeed.z);
 
         rigBod.velocity = velocity.normalized * velocity.magnitude * maxSpeed;
     }
