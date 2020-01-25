@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
 
 
     public int playerNum;
+    bool usingController = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,10 +29,32 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     public void MovementUpdate()
     {
-        //General Movement (Keyboard)
-        input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);
-        input.z = Input.GetAxisRaw("VerticalK_P" + playerNum);
 
+        if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d") && playerNum == 1)
+            usingController = false;
+
+        if (Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("left") || Input.GetKeyDown("right") && playerNum == 2)
+            usingController = false;
+
+
+        if (!usingController && playerNum < 3)
+        {
+            //General Movement (Keyboard)
+            input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);
+        input.z = Input.GetAxisRaw("VerticalK_P" + playerNum);
+        }
+
+        else
+        {
+
+            //General Movement (Controller)
+            input.x = Input.GetAxisRaw("Horizontal_P" + playerNum);
+            input.y = Input.GetAxisRaw("Vertical_P" + playerNum);
+
+            //Quadrant Input (Controller)
+            input.x = Input.GetAxis("Horizontal_P" + playerNum);
+            input.y = Input.GetAxis("Vertical_P" + playerNum);
+        }
 
 
 
