@@ -590,10 +590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0536a461a8d9c45893469d84efba47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 7
   input: {x: 0, y: 0, z: 0}
-  accelTime: 0
-  decelTime: 0
+  accelTime: 0.25
+  decelTime: 0.5
   playerNum: 1
 --- !u!54 &1239011440
 Rigidbody:
