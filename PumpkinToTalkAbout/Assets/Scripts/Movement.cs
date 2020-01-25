@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float decelTime;
 
-
     public int playerNum;
     bool usingController = true;
     // Start is called before the first frame update
@@ -41,12 +40,11 @@ public class Movement : MonoBehaviour
         {
             //General Movement (Keyboard)
             input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);
-        input.z = Input.GetAxisRaw("VerticalK_P" + playerNum);
+            input.z = Input.GetAxisRaw("VerticalK_P" + playerNum);
         }
 
         else
         {
-
             //General Movement (Controller)
             input.x = Input.GetAxisRaw("Horizontal_P" + playerNum);
             input.y = Input.GetAxisRaw("Vertical_P" + playerNum);
