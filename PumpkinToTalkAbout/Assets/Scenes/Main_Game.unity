@@ -172,8 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  accelTime: 0
-  decelTime: 0
+  accelTime: 0.3
+  decelTime: 0.3
   playerNum: 2
 --- !u!114 &38919261
 MonoBehaviour:
@@ -312,8 +312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  accelTime: 0
-  decelTime: 0
+  accelTime: 0.3
+  decelTime: 0.3
   playerNum: 3
 --- !u!114 &147223088
 MonoBehaviour:
@@ -675,8 +675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  accelTime: 0
-  decelTime: 0
+  accelTime: 0.3
+  decelTime: 0.3
   playerNum: 3
 --- !u!114 &1359171244
 MonoBehaviour:
