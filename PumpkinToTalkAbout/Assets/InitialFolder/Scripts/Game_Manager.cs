@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Game_Manager : MonoBehaviour
 {
-    public float gameTime;
+    private float gameTime;
+    public float maxgameTime;
     public int score;
 
     public enum State { Starting, Playing,Gameover};
@@ -22,7 +23,9 @@ public class Game_Manager : MonoBehaviour
         switch (state)
         {
             case (State.Starting):
-
+                gameTime = maxgameTime;
+                score = 0;
+                state = State.Playing;
                 break;
             case (State.Playing):
 
