@@ -8,9 +8,11 @@ public class Game_Manager : MonoBehaviour
     public float maxgameTime;
     public int score;
 
-    public enum State { Starting, Playing,Gameover};
+    public enum State { Starting, Playing,Gameover, Paused};
     public State state;
 
+
+    public float pausingPlayer;
 
     void Start()
     {
@@ -31,6 +33,9 @@ public class Game_Manager : MonoBehaviour
 
                 break;
             case (State.Gameover):
+
+                break;
+            case (State.Paused):
 
                 break;
 
