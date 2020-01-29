@@ -18,6 +18,8 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float decelTime;
 
+    bool pickedUpPumpkin = false; 
+
     public int playerNum;
     bool usingController = true;
     // Start is called before the first frame update
