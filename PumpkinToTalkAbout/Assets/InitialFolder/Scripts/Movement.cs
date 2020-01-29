@@ -12,10 +12,13 @@ public class Movement : MonoBehaviour
     private Vector3 lastRecordedInput;
     private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
+    private Rigidbody otherRigBod;
     [SerializeField]
     private float accelTime;
     [SerializeField]
     private float decelTime;
+
+    bool pickedUpPumpkin; 
 
     public int playerNum;
     bool usingController = true;
