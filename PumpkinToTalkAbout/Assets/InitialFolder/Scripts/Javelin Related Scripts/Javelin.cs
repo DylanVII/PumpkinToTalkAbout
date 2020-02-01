@@ -17,19 +17,16 @@ public class Javelin : MonoBehaviour
             collider = GetComponent<Collider>();
     }
 
-    void OnColliderEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Hedge")
+        if (other.gameObject.tag == "Pumpkin")
         {
-            collider.enabled = false;
-        }
-    }
 
-    void OnColliderExit(Collider other)
-    {
-        if (other.tag == "Hedge")
+        }
+
+        if (other.gameObject.tag == "Ghost")
         {
-            collider.enabled = true;
+
         }
     }
 }
