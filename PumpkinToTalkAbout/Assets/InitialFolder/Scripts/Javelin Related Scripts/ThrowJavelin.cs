@@ -25,7 +25,7 @@ public class ThrowJavelin : MonoBehaviour
     void Update()
     {
         //PRIMITIVE CHECK; REVISE LATER
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             CreateJavelin();
         }

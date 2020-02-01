@@ -16,6 +16,8 @@ public class Javelin : MonoBehaviour
 
     [SerializeField]
     private GameObject parent;
+    [SerializeField]
+    private GameObject attachedObject;
 
     [SerializeField]
     private bool isReeling = false;
@@ -53,6 +55,11 @@ public class Javelin : MonoBehaviour
 
             //collider.enabled = true;
 
+            if (attachedObject)
+            {
+                attachedObject.transform.parent = null;
+            }
+
             Destroy(gameObject);
         }
     }
@@ -62,6 +69,12 @@ public class Javelin : MonoBehaviour
         if (other.gameObject.tag == "Pumpkin")
         {
             isReeling = true;
+
+            GameObject pumpkin = other.gameObject;
+
+            pumpkin.GetComponent<Pumpkin>().isGrabbed = true;
+            pumpkin.transform.parent = gameObject.transform;
+            attachedObject = pumpkin;
 
             //Disable unnecessary collisions when reeling.
             collider.enabled = false;
