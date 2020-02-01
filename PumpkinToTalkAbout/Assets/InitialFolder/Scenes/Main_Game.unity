@@ -330,17 +330,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 877dc622535c62d45850340422f6258e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.399375
+      value: 2.5691812
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 877dc622535c62d45850340422f6258e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.450642
+      value: 6.3829
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 877dc622535c62d45850340422f6258e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 50.068817
+      value: 6.3829
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 877dc622535c62d45850340422f6258e,
         type: 3}
@@ -1299,7 +1299,7 @@ GameObject:
   - component: {fileID: 1755911657}
   - component: {fileID: 1755911656}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
