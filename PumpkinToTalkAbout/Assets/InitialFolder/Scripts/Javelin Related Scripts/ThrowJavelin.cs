@@ -12,12 +12,12 @@ public class ThrowJavelin : MonoBehaviour
 {
     public float throwStrength = 10f;
 
-
     [SerializeField]
     private GameObject javelinPrefab;
 
     public void CreateJavelin()
     {
-        Instantiate(javelinPrefab, transform.position + Vector3.up, Quaternion.identity, transform);
+        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.up, Quaternion.identity, transform);
+        javelin.GetComponent<Rigidbody>().velocity = Vector3.up * throwStrength;
     }
 }
