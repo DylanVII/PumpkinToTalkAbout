@@ -58,6 +58,11 @@ public class Javelin : MonoBehaviour
             if (attachedObject)
             {
                 attachedObject.transform.parent = null;
+
+                if (attachedObject.tag == "Pumpkin")
+                {
+                    attachedObject.GetComponent<Pumpkin>().isGrabbed = false;
+                }
             }
 
             Destroy(gameObject);
@@ -85,6 +90,12 @@ public class Javelin : MonoBehaviour
             Debug.Log("Impaled a ghost boi");
 
             //Do stun code
+            isReeling = true;
+
+            GameObject ghost = other.gameObject;
+
+
+
         }
     }
 

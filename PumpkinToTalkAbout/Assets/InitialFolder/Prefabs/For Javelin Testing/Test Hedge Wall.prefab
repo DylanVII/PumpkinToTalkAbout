@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2586309672332711071}
   - component: {fileID: 7945474668935741103}
   - component: {fileID: 5581127639483853721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Test Hedge Wall
-  m_TagString: Untagged
+  m_TagString: Hedge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
