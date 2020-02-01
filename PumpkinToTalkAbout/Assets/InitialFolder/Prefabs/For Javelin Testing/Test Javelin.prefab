@@ -106,3 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43510bd6c7adc9240bfa09b7b78f224b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  isReeling: 0
+  reelSpeed: 20

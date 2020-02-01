@@ -17,8 +17,9 @@ public class ThrowJavelin : MonoBehaviour
 
     public void CreateJavelin()
     {
-        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward, Quaternion.identity, transform);
+        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward, transform.rotation, transform);
         javelin.GetComponent<Rigidbody>().velocity = Vector3.forward * throwStrength;
+        javelin.transform.Rotate(new Vector3(90, 0, 0));
     }
 
     void Update()

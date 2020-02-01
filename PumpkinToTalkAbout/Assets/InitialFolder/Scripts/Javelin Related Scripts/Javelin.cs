@@ -51,9 +51,9 @@ public class Javelin : MonoBehaviour
         {
             isReeling = false;
 
-            collider.enabled = true;
+            //collider.enabled = true;
 
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
