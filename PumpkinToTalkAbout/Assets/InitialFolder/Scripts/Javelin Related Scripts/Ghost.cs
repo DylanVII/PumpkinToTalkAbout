@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
+    public bool canMove;
+
+    public float maxStunDuration, currentStunDuration;
+
     public _states status;
     public enum _states
     {
@@ -28,7 +32,21 @@ public class Ghost : MonoBehaviour
 
             case _states.stunned:
                 //be not ok
+                Stunned();
                 break;
+        }
+    }
+
+    public void Stunned()
+    {
+        canMove = false;
+
+        if (status == _states.stunned)
+        {
+            if (currentStunDuration > 0)
+                currentStunDuration -= Time.deltaTime;
+            else
+                status = _states.normal;
         }
     }
 }
