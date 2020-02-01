@@ -12,14 +12,15 @@ using UnityEngine;
  */
 public class Javelin : MonoBehaviour
 {
+    private new Collider collider;
+
     [SerializeField]
     private GameObject parent;
 
-    private new Collider collider;
-
+    [SerializeField]
     private bool isReeling = false;
 
-
+    [SerializeField]
     private float reelSpeed = 5f; //Speed for when the Javelin returns to the player.
 
     void Start()
@@ -49,6 +50,10 @@ public class Javelin : MonoBehaviour
         else
         {
             isReeling = false;
+
+            collider.enabled = true;
+
+            //Destroy(gameObject);
         }
     }
 
@@ -57,6 +62,9 @@ public class Javelin : MonoBehaviour
         if (other.gameObject.tag == "Pumpkin")
         {
             isReeling = true;
+
+            //Disable unnecessary collisions when reeling.
+            collider.enabled = false;
         }
 
         if (other.gameObject.tag == "Ghost")

@@ -864,6 +864,7 @@ GameObject:
   - component: {fileID: 1239011435}
   - component: {fileID: 1239011441}
   - component: {fileID: 1239011439}
+  - component: {fileID: 1239011442}
   - component: {fileID: 1239011440}
   m_Layer: 0
   m_Name: Test Farmer
@@ -990,6 +991,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1f4f80f63e8b3459075dd6d56a9fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1239011442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239011434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a12b880b1473c40952fc2255e18731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwStrength: 30
+  javelinPrefab: {fileID: 1912024811}
 --- !u!1 &1339898852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,12 +1995,12 @@ PrefabInstance:
     - target: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4509060746549735546, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.46
+      value: -8.15
       objectReference: {fileID: 0}
     - target: {fileID: 4509060746549735546, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
@@ -1995,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 4509060746549735546, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.904
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 4509060746549735546, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
