@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Javelin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float throwStrength = 10f;
+    
+    public void ThrowJavelin ()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
