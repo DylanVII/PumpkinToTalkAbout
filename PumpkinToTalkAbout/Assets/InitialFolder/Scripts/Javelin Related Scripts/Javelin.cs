@@ -76,9 +76,12 @@ public class Javelin : MonoBehaviour
             isReeling = true;
 
             GameObject pumpkin = other.gameObject;
+            Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
 
-            pumpkin.GetComponent<Pumpkin>().isGrabbed = true;
-            pumpkin.transform.parent = gameObject.transform;
+            pumpkinScript.isGrabbed = true;
+            pumpkinScript.parentTransform = transform;
+            pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            //pumpkin.transform.parent = gameObject.transform;
             attachedObject = pumpkin;
 
             //Disable unnecessary collisions when reeling.
