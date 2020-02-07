@@ -27,7 +27,7 @@ public class Pumpkin : MonoBehaviour
             {
                 Debug.Log("Mirroring Pitchfork transform...");
                 //Debug.Log(parentTransform.GetComponent<Rigidbody>().velocity);
-                GetComponent<Rigidbody>().velocity = parentTransform.GetComponent<Rigidbody>().velocity * -2f;
+                GetComponent<Rigidbody>().velocity = parentTransform.GetComponent<Rigidbody>().velocity;
             }
         }
         else

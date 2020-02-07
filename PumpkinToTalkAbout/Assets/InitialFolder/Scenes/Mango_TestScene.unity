@@ -1848,6 +1848,11 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 1239011434}
+    - target: {fileID: 4509060746549735526, guid: bb5f53762c9a93447baabe05f34123d3,
+        type: 3}
+      propertyPath: reelSpeed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb5f53762c9a93447baabe05f34123d3, type: 3}
 --- !u!1001 &8658955182921823036
