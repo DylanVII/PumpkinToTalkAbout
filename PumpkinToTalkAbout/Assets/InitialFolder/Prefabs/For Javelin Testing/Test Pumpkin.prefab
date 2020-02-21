@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2416323240168308834}
   - component: {fileID: 197973900138321236}
   - component: {fileID: 1880167589295136665}
-  m_Layer: 8
+  - component: {fileID: 144604196}
+  m_Layer: 0
   m_Name: Test Pumpkin
-  m_TagString: Hedge
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,3 +106,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63493ce2de632504ea3df202c5d27a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrabbed: 0
+  parentTransform: {fileID: 0}
+--- !u!54 &144604196
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881194873932281116}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 5
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
