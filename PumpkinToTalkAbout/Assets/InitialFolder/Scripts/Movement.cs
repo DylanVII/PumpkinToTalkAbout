@@ -9,7 +9,8 @@ public class Movement : MonoBehaviour
     private float maxSpeed;
     public Vector3 input;
 
-    private Vector3 lastRecordedInput;
+ 
+    public Vector3 lastRecordedInput;
     private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
     private Rigidbody otherRigBod;
@@ -50,11 +51,11 @@ public class Movement : MonoBehaviour
         {
             //General Movement (Controller)
             input.x = Input.GetAxisRaw("Horizontal_P" + playerNum);
-            input.y = Input.GetAxisRaw("Vertical_P" + playerNum);
+            input.z = Input.GetAxisRaw("Vertical_P" + playerNum);
 
             //Quadrant Input (Controller)
             input.x = Input.GetAxis("Horizontal_P" + playerNum);
-            input.y = Input.GetAxis("Vertical_P" + playerNum);
+            input.z = Input.GetAxis("Vertical_P" + playerNum);
         }
 
 
