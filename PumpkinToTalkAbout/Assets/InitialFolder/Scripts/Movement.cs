@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    Animator anim;
+    Quaternion targetRot;
+
+    float angle;
 
     [SerializeField]
     private float maxSpeed;
     public Vector3 input;
-
+    public float turnSpeed;
+    
     private Vector3 lastRecordedInput;
     private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
@@ -26,6 +31,19 @@ public class Movement : MonoBehaviour
     void Awake()
     {
         rigBod = GetComponent<Rigidbody>();
+    }
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+        
+        CalculateDirection();
+        Rotate();
     }
 
     // Update is called once per frame
@@ -85,18 +103,25 @@ public class Movement : MonoBehaviour
         //Movement calculations 
         if (input.x != 0)
         {
+            // if farmer moves, play running animation
+            anim.SetBool("isRunning", true);
             inputSpeed.x = Mathf.Clamp(inputSpeed.x + acceleration, 0, 1);
         }
         else
         {
+            // if farmer doesn't move, play idle animation
+             anim.SetBool("isRunning", false);
             inputSpeed.x = Mathf.Clamp(inputSpeed.x - deceleration, 0, 1);
         }
         if (input.z != 0)
         {
+            // if farmer moves, play running animation
+            anim.SetBool("isRunning", true);
             inputSpeed.z = Mathf.Clamp(inputSpeed.z + acceleration, 0, 1);
         }
         else
         {
+           // anim.SetBool("isRunning", false);
             inputSpeed.z = Mathf.Clamp(inputSpeed.z - deceleration, 0, 1);
         }
         //Final movement calulations
@@ -105,6 +130,18 @@ public class Movement : MonoBehaviour
         rigBod.velocity = velocity.normalized * velocity.magnitude * maxSpeed;
     }
 
+
+    void CalculateDirection()
+    {
+        angle = Mathf.Atan2(input.x, input.y);
+        angle = Mathf.Rad2Deg * angle;
+    }
+
+    void Rotate()
+    {
+        targetRot = Quaternion.Euler(0, angle, 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, turnSpeed * Time.deltaTime);
+    }
 
 
 }
