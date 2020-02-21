@@ -35,7 +35,7 @@ public class PressurePad : MonoBehaviour
             timePassing = 0;
 
             //Raise the door hedge
-            doorHedge.transform.position = new Vector3(doorHedge.transform.position.x, 1.5f, doorHedge.transform.position.z);
+            doorHedge.transform.position = new Vector3(doorHedge.transform.position.x, 1.15f, doorHedge.transform.position.z);
         }
         //If something has come off the pressure pad and nothing is on it
         if (!steppedOnBool & steppedOff)
@@ -65,7 +65,7 @@ public class PressurePad : MonoBehaviour
     void timerEnded()
     {
         //Bring down the pressure pad
-        doorHedge.transform.position = new Vector3(doorHedge.transform.position.x, -0.17f, doorHedge.transform.position.z);
+        doorHedge.transform.position = new Vector3(doorHedge.transform.position.x, -1.45f, doorHedge.transform.position.z);
 
         steppedOff = false;
         //Only use if timer needs to be reset
