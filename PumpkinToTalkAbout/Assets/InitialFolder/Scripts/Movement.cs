@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float decelTime;
 
-    bool pickedUpPumpkin = false; 
+    bool pickedUpPumpkin = true; 
 
     public int playerNum;
     bool usingController = true;
@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     public void MovementUpdate()
     {
 
+        //Setting the player number to their controls (keyboard)
         if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d") && playerNum == 1)
             usingController = false;
 
@@ -60,7 +61,7 @@ public class Movement : MonoBehaviour
 
 
 
-
+        //Used to record the last input
         if (input.x != 0)
         {
             lastRecordedInput.x = input.x;
@@ -76,9 +77,12 @@ public class Movement : MonoBehaviour
 
     public void MovementFixedUpdate()
     {
+        //Formulas for creating deceleration and acceleration
         float acceleration = maxSpeed / accelTime * Time.fixedDeltaTime;
         float deceleration = maxSpeed / decelTime * Time.fixedDeltaTime;
 
+
+        //Movement calculations 
         if (input.x != 0)
         {
             inputSpeed.x = Mathf.Clamp(inputSpeed.x + acceleration, 0, 1);
@@ -95,7 +99,7 @@ public class Movement : MonoBehaviour
         {
             inputSpeed.z = Mathf.Clamp(inputSpeed.z - deceleration, 0, 1);
         }
-
+        //Final movement calulations
         Vector3 velocity = new Vector3(lastRecordedInput.x * inputSpeed.x, 0, lastRecordedInput.z * inputSpeed.z);
 
         rigBod.velocity = velocity.normalized * velocity.magnitude * maxSpeed;
