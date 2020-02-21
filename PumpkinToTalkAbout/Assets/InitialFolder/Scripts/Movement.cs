@@ -64,11 +64,17 @@ public class Movement : MonoBehaviour
 
         if (input.x != 0)
         {
+        
+
             lastRecordedInput.x = input.x;
+            lastRecordedInput.x = Mathf.Round(lastRecordedInput.x);
         }
         if (input.z != 0)
         {
+
+          
             lastRecordedInput.z = input.z;
+            lastRecordedInput.z = Mathf.Round(lastRecordedInput.z);
         }
 
 

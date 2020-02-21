@@ -486,8 +486,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147223085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: 1.28, z: 7.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.56, y: 1.28, z: 7.8484}
+  m_LocalScale: {x: 1, y: 1, z: 0.98401}
   m_Children:
   - {fileID: 853070469}
   - {fileID: 1591822200}
@@ -509,6 +509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHitbox: {fileID: 2104135736}
+  hitBox: {fileID: 0}
+  onHitbox: {fileID: 2100000, guid: b76451b4fdb3e404da339435e10f1e5c, type: 2}
+  offHitbox: {fileID: 2100000, guid: b7d89fdb7f7f84e48bb79d015403bf3b, type: 2}
 --- !u!1 &403979838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,6 +1933,7 @@ GameObject:
   - component: {fileID: 2104135740}
   - component: {fileID: 2104135739}
   - component: {fileID: 2104135738}
+  - component: {fileID: 2104135741}
   m_Layer: 0
   m_Name: Grab_Hitbox
   m_TagString: Untagged
@@ -1944,8 +1949,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104135736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.097}
-  m_LocalScale: {x: 1.6434, y: 0.38283, z: 0.8677656}
+  m_LocalPosition: {x: 0, y: 0, z: -1.32}
+  m_LocalScale: {x: 1.217785, y: 0.9132478, z: 1.2645081}
   m_Children: []
   m_Father: {fileID: 147223092}
   m_RootOrder: 4
@@ -1980,7 +1985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b7d89fdb7f7f84e48bb79d015403bf3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2009,6 +2014,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104135736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2104135741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104135736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
 --- !u!1001 &8658955182921823036
 PrefabInstance:
   m_ObjectHideFlags: 0
