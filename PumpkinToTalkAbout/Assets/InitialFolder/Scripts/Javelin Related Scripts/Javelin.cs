@@ -44,10 +44,15 @@ public class Javelin : MonoBehaviour
 
     public void PullObjectToLocation(Vector3 endPosition, float reelingSpeed)
     {
-        if (transform.position != endPosition)
+        if (Vector3.Distance(endPosition,transform.position) > 0.1f)
         {
             float step = reelingSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, endPosition, step);
+            //transform.position = Vector3.MoveTowards(transform.position, endPosition, step);
+
+            Vector3 direction = endPosition - transform.position;
+            Vector3 normalizedDirection = direction.normalized;
+
+            GetComponent<Rigidbody>().velocity = normalizedDirection * step;
         }
         else
         {
@@ -76,9 +81,12 @@ public class Javelin : MonoBehaviour
             isReeling = true;
 
             GameObject pumpkin = other.gameObject;
+            Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
 
-            pumpkin.GetComponent<Pumpkin>().isGrabbed = true;
-            pumpkin.transform.parent = gameObject.transform;
+            pumpkinScript.isGrabbed = true;
+            pumpkinScript.parentTransform = transform;
+            pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            //pumpkin.transform.parent = gameObject.transform;
             attachedObject = pumpkin;
 
             //Disable unnecessary collisions when reeling.
