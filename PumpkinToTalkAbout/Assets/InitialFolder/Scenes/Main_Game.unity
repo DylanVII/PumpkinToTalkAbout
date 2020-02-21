@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
+  turnSpeed: 0
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 2
@@ -312,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
+  turnSpeed: 0
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -810,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   input: {x: 0, y: 0, z: 0}
+  turnSpeed: 0
   accelTime: 0.25
   decelTime: 0.5
   playerNum: 1
@@ -893,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
+  turnSpeed: 0
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -1498,6 +1502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 7
   input: {x: 0, y: 0, z: 0}
+  turnSpeed: 10
   accelTime: 0.25
   decelTime: 0.5
   playerNum: 1

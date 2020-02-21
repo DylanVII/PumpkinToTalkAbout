@@ -40,7 +40,8 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+        // stop and face current direction when input is absent in x or z-axis
+        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.z) < 1) return;
         
         CalculateDirection();
         Rotate();
@@ -130,13 +131,15 @@ public class Movement : MonoBehaviour
         rigBod.velocity = velocity.normalized * velocity.magnitude * maxSpeed;
     }
 
-
+    // Calculate the math in the angle of movement directions
     void CalculateDirection()
     {
-        angle = Mathf.Atan2(input.x, input.y);
+        angle = Mathf.Atan2(input.x, input.z);
         angle = Mathf.Rad2Deg * angle;
     }
 
+    // Calculate target rotation based on the angle that was calculated
+    // Smoothed the rotation
     void Rotate()
     {
         targetRot = Quaternion.Euler(0, angle, 0);
