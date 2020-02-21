@@ -27,6 +27,7 @@ public class Javelin : MonoBehaviour
 
     void Start()
     {
+        parent = transform.parent.gameObject;
         if (!collider)
             collider = GetComponent<Collider>();
     }

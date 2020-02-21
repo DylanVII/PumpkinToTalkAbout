@@ -44,7 +44,7 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Ghost")
             steppedOnBool = true;
     }
     private void OnTriggerExit(Collider other)
