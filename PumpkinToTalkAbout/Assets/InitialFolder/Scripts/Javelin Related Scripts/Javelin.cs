@@ -14,8 +14,7 @@ public class Javelin : MonoBehaviour
 {
     private new Collider collider;
 
-    [SerializeField]
-    private GameObject parent;
+    public GameObject parent;
     [SerializeField]
     private GameObject attachedObject;
 

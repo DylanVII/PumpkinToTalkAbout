@@ -110,7 +110,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   attachedObject: {fileID: 0}
   isReeling: 0
-  reelSpeed: 20
+  reelSpeed: 500
 --- !u!54 &1912024812
 Rigidbody:
   m_ObjectHideFlags: 0
