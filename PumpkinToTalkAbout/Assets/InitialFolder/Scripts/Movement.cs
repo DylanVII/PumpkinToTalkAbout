@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float decelTime;
 
-    bool pickedUpPumpkin = false; 
+    bool pickedUpPumpkin = true; 
 
     public int playerNum;
     bool usingController = true;
