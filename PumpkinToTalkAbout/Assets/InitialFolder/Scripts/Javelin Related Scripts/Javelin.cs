@@ -42,7 +42,13 @@ public class Javelin : MonoBehaviour
     }
 
 
-
+    /* PullObjectToLocation
+     * -------------------------------------
+     * Moves this gameObject via velocity towards the input Vector3 position.
+     * Velocity scales by input float "reeling speed".
+     * Typically called every frame.
+     * 
+     */
     public void PullObjectToLocation(Vector3 endPosition, float reelingSpeed)
     {
         if (Vector3.Distance(endPosition,transform.position) > 0.1f)
