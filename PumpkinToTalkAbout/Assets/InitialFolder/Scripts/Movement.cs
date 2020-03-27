@@ -42,9 +42,12 @@ public class Movement : MonoBehaviour
     {
         // stop and face current direction when input is absent in x or z-axis
         if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.z) < 1) return;
-        
-        CalculateDirection();
-        Rotate();
+
+        if (anim)
+        {
+            CalculateDirection();
+            Rotate();
+        }
     }
 
     // Update is called once per frame
@@ -104,20 +107,23 @@ public class Movement : MonoBehaviour
         //Movement calculations 
         if (input.x != 0)
         {
-            // if farmer moves, play running animation
-            anim.SetBool("isRunning", true);
+            if (anim)
+                // if farmer moves, play running animation
+                anim.SetBool("isRunning", true);
             inputSpeed.x = Mathf.Clamp(inputSpeed.x + acceleration, 0, 1);
         }
         else
         {
-            // if farmer doesn't move, play idle animation
-             anim.SetBool("isRunning", false);
+            if (anim)
+                // if farmer doesn't move, play idle animation
+                anim.SetBool("isRunning", false);
             inputSpeed.x = Mathf.Clamp(inputSpeed.x - deceleration, 0, 1);
         }
         if (input.z != 0)
         {
-            // if farmer moves, play running animation
-            anim.SetBool("isRunning", true);
+            if (anim)
+                // if farmer moves, play running animation
+                anim.SetBool("isRunning", true);
             inputSpeed.z = Mathf.Clamp(inputSpeed.z + acceleration, 0, 1);
         }
         else
