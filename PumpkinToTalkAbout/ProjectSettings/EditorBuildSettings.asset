@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/InitialFolder/Scenes/Tittle_Screen.unity
     guid: 799ae30bd5fccb742bb2a4e7420ecede
   - enabled: 1
-    path: Assets/InitialFolder/Scenes/Main_Game.unity
+    path: Assets/InitialFolder/Scenes/Archive/Main_Game.unity
     guid: 63cbc63ef167b2e4eb21f44657418a3f
   m_configObjects: {}

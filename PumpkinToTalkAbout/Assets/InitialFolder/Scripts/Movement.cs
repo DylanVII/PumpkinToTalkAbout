@@ -43,11 +43,11 @@ public class Movement : MonoBehaviour
         // stop and face current direction when input is absent in x or z-axis
         if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.z) < 1) return;
 
-        if (anim)
-        {
+        //if (anim)
+        //{
             CalculateDirection();
             Rotate();
-        }
+        //}
     }
 
     // Update is called once per frame
