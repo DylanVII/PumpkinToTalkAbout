@@ -28,7 +28,7 @@ public class Pick_Up : MonoBehaviour
         //This commented code will be relevant when we have rotation code down
         grabHitbox.transform.position = grabLocation.transform.position;
         //if the b button is pressed and the hitbox is triggering with a pumpkin Grab the pumpkin
-        if (Input.GetButton("b button"))
+        if (Input.GetButton("Fire2") || Input.GetKey("b"))
         {
             Debug.Log("Button B is pressed");
             //set the active hitbox color
