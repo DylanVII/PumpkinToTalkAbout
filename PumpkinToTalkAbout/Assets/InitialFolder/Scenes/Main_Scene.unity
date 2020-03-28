@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 2
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -537,6 +537,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6a93147d20f65174587d620a6c40a0f3, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 1c23abd530621fd4aaa1122ec6fa3d3c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c23abd530621fd4aaa1122ec6fa3d3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2557,7 +2562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
