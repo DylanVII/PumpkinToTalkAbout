@@ -11,16 +11,19 @@ public class ScoreManager : MonoBehaviour
     public Text collectedPumpkinsText;
     public Text remainingPumpkinsText;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
+        remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
     }
 
     // Update is called once per frame
     void Update()
     {
-        pointScored();
+        //pointScored();
     }
 
 
@@ -32,8 +35,20 @@ public class ScoreManager : MonoBehaviour
             remainingPumpkins -= 1;
         }
 
+        Debug.Log("Something is being gay");
+        collectedPumpkins += 1;
+        remainingPumpkins -= 1;
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
         remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Pumpkin")
+        {
+            Debug.Log("Something is being gay");
+            pointScored();
+        }
 
     }
 }

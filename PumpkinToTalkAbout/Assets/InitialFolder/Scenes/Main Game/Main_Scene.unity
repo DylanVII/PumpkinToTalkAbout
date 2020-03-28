@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38919265}
   - component: {fileID: 38919261}
+  - component: {fileID: 38919263}
   - component: {fileID: 38919260}
   - component: {fileID: 38919259}
   - component: {fileID: 38919262}
@@ -240,10 +241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
-  playerNum: 2
+  playerNum: 1
 --- !u!114 &38919261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +271,22 @@ CapsuleCollider:
   m_Height: 3.5448656
   m_Direction: 1
   m_Center: {x: 0.02159965, y: -0.71454954, z: 5.4855887e-16}
+--- !u!114 &38919263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38919258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 1099873832}
+  grabHitbox: {fileID: 1099873832}
+  hitBox: {fileID: 1099873835}
+  triggerScript: {fileID: 1099873834}
 --- !u!4 &38919265
 Transform:
   m_ObjectHideFlags: 0
@@ -282,6 +299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47580359}
+  - {fileID: 1099873833}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
@@ -301,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147223092}
   - component: {fileID: 147223088}
+  - component: {fileID: 147223090}
   - component: {fileID: 147223087}
   - component: {fileID: 147223086}
   - component: {fileID: 147223089}
@@ -341,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -371,6 +390,22 @@ CapsuleCollider:
   m_Height: 3.7794614
   m_Direction: 1
   m_Center: {x: 0.02159965, y: 0.9315603, z: 0}
+--- !u!114 &147223090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147223085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 195794281}
+  grabHitbox: {fileID: 195794281}
+  hitBox: {fileID: 195794284}
+  triggerScript: {fileID: 195794283}
 --- !u!4 &147223092
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526844006}
+  - {fileID: 195794282}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -432,6 +468,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &195794281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195794282}
+  - component: {fileID: 195794284}
+  - component: {fileID: 195794283}
+  m_Layer: 10
+  m_Name: Pickup_Trigger_Box (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &195794282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195794281}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
+  m_LocalPosition: {x: 0, y: 1.0600002, z: -1.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 147223092}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195794283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195794281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!65 &195794284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195794281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5877981, y: 3.5407267, z: 1.2882771}
+  m_Center: {x: -0.03618008, y: -0.27302313, z: -0.5449494}
 --- !u!1 &203864364
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +632,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6a93147d20f65174587d620a6c40a0f3, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 1c23abd530621fd4aaa1122ec6fa3d3c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c23abd530621fd4aaa1122ec6fa3d3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -722,6 +822,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin03
       objectReference: {fileID: 0}
+    - target: {fileID: 2664261121940155775, guid: 12b5ef14c65da064294eccd930d91389,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b5ef14c65da064294eccd930d91389, type: 3}
 --- !u!1001 &473894817
@@ -735,6 +840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pumpkin02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
       objectReference: {fileID: 0}
     - target: {fileID: 3474191933973570066, guid: 477d63ae1100bdc42aad285c268db548,
         type: 3}
@@ -977,6 +1087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pumpkin01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
       objectReference: {fileID: 0}
     - target: {fileID: 7675786178273550928, guid: 8b5e280700e531b4ba5ae977384ef9b8,
         type: 3}
@@ -1358,7 +1473,7 @@ MonoBehaviour:
   turnSpeed: 10
   accelTime: 0.25
   decelTime: 0.5
-  playerNum: 1
+  playerNum: 2
 --- !u!114 &628867463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3dd5be9f15a04544ba79458ec6f0aac2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3dd5be9f15a04544ba79458ec6f0aac2,
         type: 3}
@@ -1465,6 +1580,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd5be9f15a04544ba79458ec6f0aac2, type: 3}
+--- !u!1 &726842680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787389538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &726842684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726842680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0156813, y: 1.6694878, z: 2.0156813}
+  m_Center: {x: -0.000000059604645, y: 0.075938046, z: 0.000000059604645}
 --- !u!1 &755268303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2199,105 @@ Transform:
   m_Father: {fileID: 161660336}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1017463553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+    type: 3}
+  m_PrefabInstance: {fileID: 473894817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1017463557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017463553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0156813, y: 1.6694878, z: 2.0156813}
+  m_Center: {x: -0.000000059604645, y: 0.075938046, z: 0.000000059604645}
+--- !u!1 &1026903994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026903996}
+  - component: {fileID: 1026903995}
+  - component: {fileID: 1026903997}
+  m_Layer: 0
+  m_Name: Pumpkin Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1026903995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026903994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.348181, y: 6.16277, z: 3.7732868}
+  m_Center: {x: 3.088091, y: 1.6385639, z: 0.6242628}
+--- !u!4 &1026903996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026903994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0069835, y: 1.5, z: 16.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026903997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026903994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd11b20d79dcad4ca6a4246cda8853f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedPumpkins: 0
+  remainingPumpkins: 5
+  collectedPumpkinsText: {fileID: 1726822479}
+  remainingPumpkinsText: {fileID: 1914219091}
+--- !u!1 &1047542144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2664261121940155775, guid: 12b5ef14c65da064294eccd930d91389,
+    type: 3}
+  m_PrefabInstance: {fileID: 472387155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1047542148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047542144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2202892, y: 1.9968946, z: 2.3789878}
+  m_Center: {x: 0.10230404, y: -0.05103776, z: 0.008924305}
 --- !u!1 &1090476361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,6 +2391,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090476361}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1099873832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1099873833}
+  - component: {fileID: 1099873835}
+  - component: {fileID: 1099873834}
+  m_Layer: 10
+  m_Name: Pickup_Trigger_Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099873833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099873832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.59, z: 1.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 38919265}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1099873834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099873832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!65 &1099873835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099873832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5877981, y: 3.5407267, z: 1.2882771}
+  m_Center: {x: -0.03618008, y: -0.27302313, z: -0.5449494}
 --- !u!1 &1170085195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2636,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222473317}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1247698421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 475115573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1247698425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247698421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0156813, y: 2.041693, z: 2.0156813}
+  m_Center: {x: -0.000000059604645, y: -0.0007354021, z: 0.000000059604645}
 --- !u!1 &1261583655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1359171248}
   - component: {fileID: 1359171244}
+  - component: {fileID: 1359171246}
   - component: {fileID: 1359171243}
   - component: {fileID: 1359171242}
   - component: {fileID: 1359171245}
@@ -2557,7 +2869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
-  turnSpeed: 0
+  turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -2587,6 +2899,22 @@ CapsuleCollider:
   m_Height: 3.5448656
   m_Direction: 1
   m_Center: {x: 0.02159965, y: -0.71454954, z: 5.4855887e-16}
+--- !u!114 &1359171246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359171241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 1979053489}
+  grabHitbox: {fileID: 1979053489}
+  hitBox: {fileID: 1979053492}
+  triggerScript: {fileID: 1979053491}
 --- !u!4 &1359171248
 Transform:
   m_ObjectHideFlags: 0
@@ -2598,6 +2926,7 @@ Transform:
   m_LocalPosition: {x: 4.07, y: 2.98, z: 7.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1979053490}
   - {fileID: 1869929065}
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -2616,7 +2945,7 @@ GameObject:
   - component: {fileID: 1361318917}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Pumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -3541,6 +3870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin02
       objectReference: {fileID: 0}
+    - target: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
+      objectReference: {fileID: 0}
     - target: {fileID: 3474191933973570066, guid: 477d63ae1100bdc42aad285c268db548,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3689,6 +4023,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin01
       objectReference: {fileID: 0}
+    - target: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
+      objectReference: {fileID: 0}
     - target: {fileID: 7675786178273550928, guid: 8b5e280700e531b4ba5ae977384ef9b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3752,6 +4091,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 670457895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1902078301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1854216062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1902078305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902078301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0156813, y: 2.041693, z: 2.0156813}
+  m_Center: {x: -0.000000059604645, y: -0.0007354021, z: 0.000000059604645}
 --- !u!1 &1914219089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,6 +4187,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914219089}
   m_CullTransparentMesh: 0
+--- !u!1 &1979053489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979053490}
+  - component: {fileID: 1979053492}
+  - component: {fileID: 1979053491}
+  m_Layer: 10
+  m_Name: Pickup_Trigger_Box (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979053490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979053489}
+  m_LocalRotation: {x: -0, y: 0.00000093877304, z: -0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -0.63999987, z: 1.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1359171248}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1979053491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979053489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!65 &1979053492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979053489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5877981, y: 3.5407267, z: 1.2882771}
+  m_Center: {x: -0.03618008, y: -0.27302313, z: -0.5449494}
 --- !u!1 &1997621877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,7 +4448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2024718009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4039,7 +4456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024718008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fd11b20d79dcad4ca6a4246cda8853f, type: 3}
   m_Name: 

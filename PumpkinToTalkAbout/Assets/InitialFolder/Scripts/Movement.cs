@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private float maxSpeed;
     public Vector3 input;
     public float turnSpeed;
-    
+
     private Vector3 lastRecordedInput;
     private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float decelTime;
 
-    bool pickedUpPumpkin = true; 
+    bool pickedUpPumpkin = true;
 
     public int playerNum;
     bool usingController = true;
@@ -40,14 +40,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        // stop and face current direction when input is absent in x or z-axis
-        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.z) < 1) return;
 
-        //if (anim)
-        //{
-            CalculateDirection();
-            Rotate();
-        //}
+        CalculateDirection();
+        Rotate();
+
     }
 
     // Update is called once per frame
@@ -73,15 +69,16 @@ public class Movement : MonoBehaviour
         {
             //General Movement (Controller)
             input.x = Input.GetAxisRaw("Horizontal_P" + playerNum);
-            input.y = Input.GetAxisRaw("Vertical_P" + playerNum);
+            input.z = Input.GetAxisRaw("Vertical_P" + playerNum);
 
             //Quadrant Input (Controller)
             input.x = Input.GetAxis("Horizontal_P" + playerNum);
-            input.y = Input.GetAxis("Vertical_P" + playerNum);
+            input.z = Input.GetAxis("Vertical_P" + playerNum);
         }
 
-
-
+        //Debug.Log("The input.z "+input.z);
+        //Debug.Log("The input.x " + input.x);
+        Debug.Log("Angle " + angle);
 
         //Used to record the last input
         if (input.x != 0)
@@ -128,7 +125,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-           // anim.SetBool("isRunning", false);
+            // anim.SetBool("isRunning", false);
             inputSpeed.z = Mathf.Clamp(inputSpeed.z - deceleration, 0, 1);
         }
         //Final movement calulations
