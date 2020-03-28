@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     public Vector3 input;
     public float turnSpeed;
     
-    private Vector3 lastRecordedInput;
+    public Vector3 lastRecordedInput;
     private Vector3 inputSpeed = Vector2.zero;
     private Rigidbody rigBod;
     private Rigidbody otherRigBod;

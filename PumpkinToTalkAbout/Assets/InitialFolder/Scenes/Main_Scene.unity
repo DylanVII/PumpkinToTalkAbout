@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 38919260}
   - component: {fileID: 38919259}
   - component: {fileID: 38919262}
+  - component: {fileID: 38919263}
   m_Layer: 10
   m_Name: Blue
   m_TagString: Ghost
@@ -241,6 +242,7 @@ MonoBehaviour:
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
   turnSpeed: 0
+  lastRecordedInput: {x: 0, y: 0, z: 0}
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 2
@@ -270,6 +272,22 @@ CapsuleCollider:
   m_Height: 3.5448656
   m_Direction: 1
   m_Center: {x: 0.02159965, y: -0.71454954, z: 5.4855887e-16}
+--- !u!114 &38919263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38919258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 1147737606}
+  grabHitbox: {fileID: 1147737606}
+  hitBox: {fileID: 1147737608}
+  triggerScript: {fileID: 1147737607}
 --- !u!4 &38919265
 Transform:
   m_ObjectHideFlags: 0
@@ -282,6 +300,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47580359}
+  - {fileID: 1147737609}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
@@ -304,6 +323,7 @@ GameObject:
   - component: {fileID: 147223087}
   - component: {fileID: 147223086}
   - component: {fileID: 147223089}
+  - component: {fileID: 147223090}
   m_Layer: 10
   m_Name: Red
   m_TagString: Ghost
@@ -342,6 +362,7 @@ MonoBehaviour:
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
   turnSpeed: 0
+  lastRecordedInput: {x: 0, y: 0, z: 0}
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -371,6 +392,22 @@ CapsuleCollider:
   m_Height: 3.7794614
   m_Direction: 1
   m_Center: {x: 0.02159965, y: 0.9315603, z: 0}
+--- !u!114 &147223090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147223085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 1466101724}
+  grabHitbox: {fileID: 1466101724}
+  hitBox: {fileID: 1466101726}
+  triggerScript: {fileID: 1466101725}
 --- !u!4 &147223092
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526844006}
+  - {fileID: 1466101727}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,6 +760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin03
       objectReference: {fileID: 0}
+    - target: {fileID: 2664261121940155775, guid: 12b5ef14c65da064294eccd930d91389,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b5ef14c65da064294eccd930d91389, type: 3}
 --- !u!1001 &473894817
@@ -735,6 +778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pumpkin02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
       objectReference: {fileID: 0}
     - target: {fileID: 3474191933973570066, guid: 477d63ae1100bdc42aad285c268db548,
         type: 3}
@@ -977,6 +1025,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pumpkin01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
       objectReference: {fileID: 0}
     - target: {fileID: 7675786178273550928, guid: 8b5e280700e531b4ba5ae977384ef9b8,
         type: 3}
@@ -1356,6 +1409,7 @@ MonoBehaviour:
   maxSpeed: 7
   input: {x: 0, y: 0, z: 0}
   turnSpeed: 10
+  lastRecordedInput: {x: 0, y: 0, z: 0}
   accelTime: 0.25
   decelTime: 0.5
   playerNum: 1
@@ -2158,6 +2212,66 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090476361}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1147737606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147737609}
+  - component: {fileID: 1147737608}
+  - component: {fileID: 1147737607}
+  m_Layer: 10
+  m_Name: Grab_Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1147737607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147737606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!136 &1147737608
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147737606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1147737609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147737606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.94, z: 2.05}
+  m_LocalScale: {x: 1.8816, y: 3.6609, z: 1}
+  m_Children: []
+  m_Father: {fileID: 38919265}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170085195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,6 +2634,7 @@ GameObject:
   - component: {fileID: 1359171243}
   - component: {fileID: 1359171242}
   - component: {fileID: 1359171245}
+  - component: {fileID: 1359171246}
   m_Layer: 10
   m_Name: Green
   m_TagString: Ghost
@@ -2558,6 +2673,7 @@ MonoBehaviour:
   maxSpeed: 5
   input: {x: 0, y: 0, z: 0}
   turnSpeed: 0
+  lastRecordedInput: {x: 0, y: 0, z: 0}
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
@@ -2587,6 +2703,22 @@ CapsuleCollider:
   m_Height: 3.5448656
   m_Direction: 1
   m_Center: {x: 0.02159965, y: -0.71454954, z: 5.4855887e-16}
+--- !u!114 &1359171246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359171241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c01fbbaf17c2d4bbc8b4423e5979b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabLocation: {fileID: 1590727034}
+  grabHitbox: {fileID: 1590727034}
+  hitBox: {fileID: 1590727036}
+  triggerScript: {fileID: 1590727035}
 --- !u!4 &1359171248
 Transform:
   m_ObjectHideFlags: 0
@@ -2599,6 +2731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1869929065}
+  - {fileID: 1590727037}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
@@ -2703,6 +2836,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1466101724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466101727}
+  - component: {fileID: 1466101726}
+  - component: {fileID: 1466101725}
+  m_Layer: 10
+  m_Name: Grab_Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1466101725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466101724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!136 &1466101726
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466101724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1466101727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466101724}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762784}
+  m_LocalPosition: {x: -0.01, y: 0.71000004, z: -2.05}
+  m_LocalScale: {x: 1.8815999, y: 3.6608999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 147223092}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476982567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,6 +3181,66 @@ Transform:
   m_Father: {fileID: 161660336}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1590727034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590727037}
+  - component: {fileID: 1590727036}
+  - component: {fileID: 1590727035}
+  m_Layer: 10
+  m_Name: Grab_Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1590727035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590727034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ac73eae20823f4cb39b353d0d41db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  targetPumpkin: {fileID: 0}
+--- !u!136 &1590727036
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590727034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1590727037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590727034}
+  m_LocalRotation: {x: -0, y: 0.00000093877304, z: -0, w: 1}
+  m_LocalPosition: {x: 0.05, y: -0.99, z: 2.05}
+  m_LocalScale: {x: 1.8815999, y: 3.6608999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1359171248}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610121793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,6 +3794,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin02
       objectReference: {fileID: 0}
+    - target: {fileID: 463192297540112385, guid: 477d63ae1100bdc42aad285c268db548,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
+      objectReference: {fileID: 0}
     - target: {fileID: 3474191933973570066, guid: 477d63ae1100bdc42aad285c268db548,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3688,6 +3946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pumpkin01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691934549721468995, guid: 8b5e280700e531b4ba5ae977384ef9b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pumpkin
       objectReference: {fileID: 0}
     - target: {fileID: 7675786178273550928, guid: 8b5e280700e531b4ba5ae977384ef9b8,
         type: 3}
