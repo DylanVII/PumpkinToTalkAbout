@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -40,6 +41,13 @@ public class ScoreManager : MonoBehaviour
         remainingPumpkins -= 1;
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
         remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
+
+    }
+
+    public void AllPumpkinsCollected()
+    {
+        if (remainingPumpkins == 0)
+            SceneManager.LoadScene("GhostsWin");
 
     }
     private void OnTriggerEnter(Collider other)

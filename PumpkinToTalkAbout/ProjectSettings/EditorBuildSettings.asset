@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InitialFolder/Scenes/Main Game/Main_Scene.unity
     guid: 7bbb00e7967925b45b7e53872a696cee
+  - enabled: 1
+    path: Assets/InitialFolder/Scenes/FarmerWin.unity
+    guid: 10d7364311524fc48ab01f07a872abbd
+  - enabled: 1
+    path: Assets/InitialFolder/Scenes/GhostWin.unity
+    guid: aaab385f8dc836647ad1ab828991671d
   m_configObjects: {}
