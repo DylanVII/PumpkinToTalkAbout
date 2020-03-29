@@ -7,6 +7,8 @@ TagManager:
   - Hedge
   - Ghost
   - Pumpkin
+  - Farmer
+  - Fence
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Hedge
   - Javelin
   - Ghost
-  - 
+  - Farmer
   - 
   - 
   - 

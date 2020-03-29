@@ -27,6 +27,13 @@ public class Movement : MonoBehaviour
 
     public int playerNum;
     bool usingController = true;
+
+    [Space]
+    public bool isAGhost;
+    private Ghost ghostScript;
+
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,6 +43,14 @@ public class Movement : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        if (!ghostScript && GetComponent<Ghost>())
+            ghostScript = GetComponent<Ghost>();
+
+        if (gameObject.tag == "Ghost")
+            isAGhost = true;
+        else
+            isAGhost = false;
     }
 
     void Update()
@@ -78,7 +93,9 @@ public class Movement : MonoBehaviour
 
         //Debug.Log("The input.z "+input.z);
         //Debug.Log("The input.x " + input.x);
-        Debug.Log("Angle " + angle);
+
+        //Commented out by MANGO from branch mechanic-javelin, 03/29/2020 - 6:18 AM
+        //Debug.Log("Angle " + angle);
 
         //Used to record the last input
         if (input.x != 0)
@@ -96,6 +113,10 @@ public class Movement : MonoBehaviour
 
     public void MovementFixedUpdate()
     {
+        if (isAGhost)
+            if (!ghostScript.canMove)
+                return;
+
         //Formulas for creating deceleration and acceleration
         float acceleration = maxSpeed / accelTime * Time.fixedDeltaTime;
         float deceleration = maxSpeed / decelTime * Time.fixedDeltaTime;

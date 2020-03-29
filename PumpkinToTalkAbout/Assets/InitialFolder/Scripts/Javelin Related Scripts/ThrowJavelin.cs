@@ -10,16 +10,26 @@ using UnityEngine;
  */
 public class ThrowJavelin : MonoBehaviour
 {
-    public float throwStrength = 10f;
-
     [SerializeField]
     private GameObject javelinPrefab;
 
+    [Header("Adjustable Parameters")]
+    public float throwStrength = 10f;
+    public float reelStrength = 5f;
+
+    public float javelinDuration = 4f;
+
     public void CreateJavelin()
     {
-        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward, transform.rotation, transform);
-        javelin.GetComponent<Rigidbody>().velocity = Vector3.forward * throwStrength;
+        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward, transform.rotation, null);
+        javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
         javelin.transform.Rotate(new Vector3(90, 0, 0));
+
+        Javelin javelinScript = javelin.GetComponent<Javelin>();
+
+        javelinScript.parent = gameObject;
+        javelinScript.reelSpeed = reelStrength;
+        javelinScript.maxDuration = javelinDuration;
     }
 
     void Update()

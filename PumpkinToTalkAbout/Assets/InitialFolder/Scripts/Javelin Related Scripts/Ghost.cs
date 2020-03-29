@@ -2,26 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Ghost.cs
+ * --------
+ * Script required for the Ghost players to function properly.
+ * Controls the stunned status when interacting with the Javelin.
+ */
 public class Ghost : MonoBehaviour
 {
-    public bool canMove;
+    private new Rigidbody rigidbody;
+    private new Collider collider;
 
-    public float maxStunDuration, currentStunDuration;
+    public bool canMove = true;
+
+    public float maxStunDuration = 3f;
+    public float currentStunDuration;
+
+    public List<string> stunnableTags; //Which tags this object gets stunned on when pulled via pitchfork.
 
     public _states status;
     public enum _states
     {
         normal,
-        stunned
+        stunned,
+        grabbed
     }
 
-    // Start is called before the first frame update
+    [HideInInspector]
+    public Transform parentTransform;
+
+
     void Start()
     {
-        
+        if (!rigidbody && GetComponent<Rigidbody>())
+            rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         switch (status)
@@ -34,19 +50,61 @@ public class Ghost : MonoBehaviour
                 //be not ok
                 Stunned();
                 break;
+
+            case _states.grabbed:
+                //be pulled by pitchfork
+                Grabbed();
+                break;
         }
     }
 
+
+
     public void Stunned()
     {
-        canMove = false;
+        Debug.Log("Stunned!");
 
-        if (status == _states.stunned)
+        if (canMove)
         {
-            if (currentStunDuration > 0)
-                currentStunDuration -= Time.deltaTime;
-            else
-                status = _states.normal;
+            canMove = false;
         }
+
+        if (currentStunDuration > 0)
+            currentStunDuration -= Time.deltaTime;
+        else
+        {
+            canMove = true;
+            status = _states.normal;
+        }
+
+    }
+
+
+
+    public void Grabbed()
+    {
+        Debug.Log("Grabbed!");
+
+        if (canMove)
+        {
+            canMove = false;
+        }
+
+        if (parentTransform)
+        {
+            rigidbody.velocity = parentTransform.GetComponent<Rigidbody>().velocity;
+        }
+    }
+
+
+
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (!stunnableTags.Contains(other.gameObject.tag))
+            return;
+
+        if (!canMove)
+            status = _states.stunned;
     }
 }

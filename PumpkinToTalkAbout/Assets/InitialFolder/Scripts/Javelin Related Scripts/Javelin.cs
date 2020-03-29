@@ -13,9 +13,9 @@ using UnityEngine;
 public class Javelin : MonoBehaviour
 {
     private new Collider collider;
+        
+    public GameObject parent;
 
-    [SerializeField]
-    private GameObject parent;
     [SerializeField]
     private GameObject attachedObject;
 
@@ -23,13 +23,20 @@ public class Javelin : MonoBehaviour
     private bool isReeling = false;
 
     [SerializeField]
-    private float reelSpeed = 5f; //Speed for when the Javelin returns to the player.
+    public float reelSpeed; //Speed for when the Javelin returns to the player.
+
+    public float maxDuration; //Lifespan in seconds. When reeling, this is paused.
+    public float currentDuration;
+
+
 
     void Start()
     {
-        parent = transform.parent.gameObject;
         if (!collider)
             collider = GetComponent<Collider>();
+
+        currentDuration = maxDuration;
+
     }
 
 
@@ -39,7 +46,11 @@ public class Javelin : MonoBehaviour
 
         if (isReeling)
             PullObjectToLocation(parent.transform.position, reelSpeed);
+
+        if (!isReeling)
+            DestroyAfterDuration();
     }
+
 
 
     /* PullObjectToLocation
@@ -51,7 +62,7 @@ public class Javelin : MonoBehaviour
      */
     public void PullObjectToLocation(Vector3 endPosition, float reelingSpeed)
     {
-        if (Vector3.Distance(endPosition,transform.position) > 0.1f)
+        if (Vector3.Distance(endPosition,transform.position) > 0.5f)
         {
             float step = reelingSpeed * Time.deltaTime;
             //transform.position = Vector3.MoveTowards(transform.position, endPosition, step);
@@ -81,6 +92,23 @@ public class Javelin : MonoBehaviour
         }
     }
 
+
+
+    /* DestroyAfterDuration()
+     * ----------------------
+     * Self-explanatory.
+     * No argument, as it already has the required information in the script.
+     */
+    public void DestroyAfterDuration()
+    {
+        currentDuration -= Time.deltaTime;
+
+        if (currentDuration <= 0)
+            Destroy(gameObject);
+    }
+
+
+
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Pumpkin")
@@ -90,10 +118,11 @@ public class Javelin : MonoBehaviour
             GameObject pumpkin = other.gameObject;
             Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
 
+            //Movement-oriented variables
             pumpkinScript.isGrabbed = true;
             pumpkinScript.parentTransform = transform;
             pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-            //pumpkin.transform.parent = gameObject.transform;
+
             attachedObject = pumpkin;
 
             //Disable unnecessary collisions when reeling.
@@ -108,8 +137,20 @@ public class Javelin : MonoBehaviour
             isReeling = true;
 
             GameObject ghost = other.gameObject;
+            Ghost ghostScript = ghost.GetComponent<Ghost>();
 
+            ghostScript.canMove = false;
+            ghostScript.status = Ghost._states.grabbed;
+            ghostScript.currentStunDuration = ghostScript.maxStunDuration;
 
+            //Movement-oriented variables
+            ghostScript.parentTransform = transform;
+            ghost.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
+            //attachedObject = ghost;
+
+            //Disable unnecessary collisions when reeling.
+            collider.enabled = false;
 
         }
     }
