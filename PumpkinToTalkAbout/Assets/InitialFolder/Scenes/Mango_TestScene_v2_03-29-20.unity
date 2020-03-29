@@ -1456,7 +1456,7 @@ MonoBehaviour:
   javelinPrefab: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
     type: 3}
   throwStrength: 25
-  reelStrength: 500
+  reelStrength: 1000
   javelinDuration: 4
 --- !u!1001 &670457895
 PrefabInstance:

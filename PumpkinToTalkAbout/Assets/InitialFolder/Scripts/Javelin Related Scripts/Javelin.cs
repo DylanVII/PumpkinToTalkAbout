@@ -22,10 +22,11 @@ public class Javelin : MonoBehaviour
     [SerializeField]
     private bool isReeling = false;
 
-    [SerializeField]
+    [HideInInspector]
     public float reelSpeed; //Speed for when the Javelin returns to the player.
-
+    [HideInInspector]
     public float maxDuration; //Lifespan in seconds. When reeling, this is paused.
+    [HideInInspector]
     public float currentDuration;
 
 
@@ -69,6 +70,7 @@ public class Javelin : MonoBehaviour
 
             Vector3 direction = endPosition - transform.position;
             Vector3 normalizedDirection = direction.normalized;
+
 
             GetComponent<Rigidbody>().velocity = normalizedDirection * step;
         }
@@ -131,7 +133,7 @@ public class Javelin : MonoBehaviour
 
         if (other.gameObject.tag == "Ghost")
         {
-            Debug.Log("Impaled a ghost boi");
+            //Debug.Log("Impaled a ghost boi");
 
             //Do stun code
             isReeling = true;
