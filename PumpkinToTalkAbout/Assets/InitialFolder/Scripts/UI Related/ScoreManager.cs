@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         //pointScored();
+        AllPumpkinsCollected();
     }
 
 
@@ -47,7 +48,7 @@ public class ScoreManager : MonoBehaviour
     public void AllPumpkinsCollected()
     {
         if (remainingPumpkins == 0)
-            SceneManager.LoadScene("GhostsWin");
+            SceneManager.LoadScene("GhostWin");
 
     }
     private void OnTriggerEnter(Collider other)
