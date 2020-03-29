@@ -3621,6 +3621,36 @@ MonoBehaviour:
             - enum
             m_Type: System.Int32
             m_EnumType: 
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: Captured Pumpkin
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 2
+          m_ValueType: System.Int32
+          m_Value: 0
+          m_Target:
+            m_Target: {fileID: 1646844875}
+            m_Path: pumpkinScore
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            - enum
+            m_Type: System.Int32
+            m_EnumType: 
     m_Name: 
 --- !u!114 &1646844875
 MonoBehaviour:
@@ -3638,6 +3668,7 @@ MonoBehaviour:
   pitchforkHitGhost: 0
   pumpkinsPickedUp: 0
   steppedOnPressurePlate: 0
+  pumpkinScore: 0
 --- !u!4 &1646844876
 Transform:
   m_ObjectHideFlags: 0

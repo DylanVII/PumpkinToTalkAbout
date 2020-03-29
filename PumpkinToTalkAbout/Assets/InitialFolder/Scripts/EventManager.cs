@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     public int pitchforkHitGhost;
     public int pumpkinsPickedUp;
     public int steppedOnPressurePlate;
+    public int pumpkinScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,11 @@ public class EventManager : MonoBehaviour
     public void AddToGhostHitCount()
     {
         pitchforkHitGhost += 1;
+    }
+    public void AddToPumpkinScoreCount()
+    {
+
+        pumpkinScore += 1;
     }
 
     public void UsedPitchfork()
@@ -76,6 +82,13 @@ public class EventManager : MonoBehaviour
         {
 
             {"Stepped on Pressure Plate", steppedOnPressurePlate }
+
+
+        });
+        Analytics.CustomEvent("PumpkinScored", new Dictionary<string, object>
+        {
+
+            {"Captured Pumpkin", pumpkinScore }
 
 
         });
