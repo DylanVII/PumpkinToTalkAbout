@@ -46,12 +46,13 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        eventManager.GetComponent<EventManager>().AddToSteppedOnPressurePlate();
+        
         if (other.gameObject.tag == "Ghost")
             steppedOnBool = true;
     }
     private void OnTriggerExit(Collider other)
     {
+        eventManager.GetComponent<EventManager>().AddToSteppedOnPressurePlate();
         steppedOnBool = false;
         steppedOff = true;
     }
