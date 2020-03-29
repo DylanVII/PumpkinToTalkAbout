@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MatchTimer : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class MatchTimer : MonoBehaviour
     {
         //Do your stuff here.
         Debug.Log("End me please");
+
+        SceneManager.LoadScene("FarmerWin");
 
         //Only use if timer needs to be reset
         //timePassing = 0;
