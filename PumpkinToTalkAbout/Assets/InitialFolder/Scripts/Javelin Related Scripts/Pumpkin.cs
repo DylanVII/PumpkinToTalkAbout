@@ -9,33 +9,50 @@ public class Pumpkin : MonoBehaviour
     public Transform parentTransform;
 
     private new Collider collider;
+    private Rigidbody rigidbody;
 
-    // Start is called before the first frame update
+
+
     void Start()
     {
         collider = GetComponent<Collider>();
+
+        if (GetComponent<Rigidbody>())
+            rigidbody = GetComponent<Rigidbody>();
+
     }
 
-    // Update is called once per frame
+
+
     void Update()
     {
         if (isGrabbed)
         {
-            collider.enabled = false;
-
-            if (parentTransform)
-            {
-                Debug.Log("Mirroring Pitchfork transform...");
-                //Debug.Log(parentTransform.GetComponent<Rigidbody>().velocity);
-                GetComponent<Rigidbody>().velocity = parentTransform.GetComponent<Rigidbody>().velocity;
-            }
+            Grabbed();
         }
         else
         {
-            collider.enabled = true;
-            GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            if (!collider.enabled)
+                collider.enabled = true;
+
+            if (rigidbody.velocity != new Vector3(0, 0, 0))
+                rigidbody.velocity = new Vector3(0,0,0);
         }
 
-       
+    }
+
+
+
+    void Grabbed()
+    {
+        if (collider.enabled)
+            collider.enabled = false;
+
+        if (parentTransform)
+        {
+            //Debug.Log("Mirroring Pitchfork transform...");
+            //Debug.Log(parentTransform.GetComponent<Rigidbody>().velocity);
+            rigidbody.velocity = parentTransform.GetComponent<Rigidbody>().velocity;
+        }
     }
 }

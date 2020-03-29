@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //Set the following scripts
-        movement = GetComponent<Movement>();
+
+        if (GetComponent<Movement>())
+            movement = GetComponent<Movement>();
     }
 
     // Update is called once per frame
