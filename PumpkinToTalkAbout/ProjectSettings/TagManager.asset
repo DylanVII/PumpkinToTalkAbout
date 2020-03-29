@@ -9,6 +9,7 @@ TagManager:
   - Pumpkin
   - Farmer
   - Fence
+  - EventManager
   layers:
   - Default
   - TransparentFX

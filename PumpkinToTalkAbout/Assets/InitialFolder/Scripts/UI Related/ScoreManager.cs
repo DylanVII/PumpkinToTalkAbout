@@ -12,11 +12,12 @@ public class ScoreManager : MonoBehaviour
     public Text collectedPumpkinsText;
     public Text remainingPumpkinsText;
 
-    
+    private GameObject eventManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        eventManager = GameObject.FindGameObjectWithTag("EventManager");
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
         remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
     }
@@ -54,6 +55,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (other.tag == "Pumpkin")
         {
+            eventManager.GetComponent<EventManager>().AddToPumpkinScoreCount();
             Debug.Log("Something is being gay");
             pointScored();
         }
