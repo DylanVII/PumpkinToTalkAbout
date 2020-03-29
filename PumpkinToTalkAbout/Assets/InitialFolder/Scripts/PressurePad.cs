@@ -14,10 +14,12 @@ public class PressurePad : MonoBehaviour
     //The time (in seconds)
     public float timePassing;
 
+    private GameObject eventManager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        eventManager = GameObject.FindGameObjectWithTag("EventManager");
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        eventManager.GetComponent<EventManager>().AddToSteppedOnPressurePlate();
         if (other.gameObject.tag == "Ghost")
             steppedOnBool = true;
     }

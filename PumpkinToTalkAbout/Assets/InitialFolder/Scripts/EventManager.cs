@@ -6,7 +6,9 @@ using UnityEngine.Analytics;
 public class EventManager : MonoBehaviour
 {
     public int pitchforkButtonPressed;
-
+    public int pitchforkHitGhost;
+    public int pumpkinsPickedUp;
+    public int steppedOnPressurePlate;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,23 @@ public class EventManager : MonoBehaviour
             pitchforkButtonPressed += 1;
         }
 
+        AnalyseGhosts();
         UsedPitchfork();
+    }
+
+
+    //Functions called by other objects
+    public void AddToPumpkinPickCount()
+    {
+        pumpkinsPickedUp += 1;
+    }
+    public void AddToSteppedOnPressurePlate()
+    {
+        steppedOnPressurePlate += 1;
+    }
+    public void AddToGhostHitCount()
+    {
+        pitchforkHitGhost += 1;
     }
 
     public void UsedPitchfork()
@@ -36,8 +54,33 @@ public class EventManager : MonoBehaviour
 
         });
 
+        Analytics.CustomEvent("Pitchfork Hit", new Dictionary<string, object>
+        {
 
+            {"Pitchfork Hit Ghost", pitchforkHitGhost }
+
+
+        });
+    }
+
+    public void AnalyseGhosts()
+    {
+        Analytics.CustomEvent("PumpkinPickedUp", new Dictionary<string, object>
+        {
+
+            {"Picked Up Pumpkin", pumpkinsPickedUp }
+
+
+        });
+        Analytics.CustomEvent("SteppedOnPressurePlate", new Dictionary<string, object>
+        {
+
+            {"Stepped on Pressure Plate", steppedOnPressurePlate }
+
+
+        });
 
 
     }
+
 }

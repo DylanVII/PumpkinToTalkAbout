@@ -29,10 +29,12 @@ public class Javelin : MonoBehaviour
     [HideInInspector]
     public float currentDuration;
 
-
+    private GameObject eventManager;
 
     void Start()
     {
+        eventManager = GameObject.FindGameObjectWithTag("EventManager");
+
         if (!collider)
             collider = GetComponent<Collider>();
 
@@ -134,6 +136,8 @@ public class Javelin : MonoBehaviour
         if (other.gameObject.tag == "Ghost")
         {
             //Debug.Log("Impaled a ghost boi");
+
+            eventManager.GetComponent<EventManager>().AddToGhostHitCount();
 
             //Do stun code
             isReeling = true;

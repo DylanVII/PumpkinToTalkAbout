@@ -11,12 +11,14 @@ public class Pick_Up : MonoBehaviour
     public Collider hitBox;
     public Triggered triggerScript;
 
+    private GameObject eventManager;
    // public Material onHitbox;
     //public Material offHitbox;
     
     void Start()
     {
-       //grabHitbox.GetComponent<MeshRenderer>().material = offHitbox;
+        //grabHitbox.GetComponent<MeshRenderer>().material = offHitbox;
+        eventManager = GameObject.FindGameObjectWithTag("EventManager");
         ghostMovement = GetComponent<Movement>();
         ghostPosition = GetComponent<Transform>();
     }
@@ -24,7 +26,9 @@ public class Pick_Up : MonoBehaviour
 
     void Update()
     {
+        //Old Code that made rotation but doesnt matter anymore
         //grabHitbox.transform.position = ghostPosition.position + ghostMovement.lastRecordedInput;
+
         //This commented code will be relevant when we have rotation code down
         grabHitbox.transform.position = grabLocation.transform.position;
         //if the b button is pressed and the hitbox is triggering with a pumpkin Grab the pumpkin
@@ -52,8 +56,11 @@ public class Pick_Up : MonoBehaviour
     //set the position of the pumpkin while the button is held
     void GrabPumpkin()
     {
+
+        eventManager.GetComponent<EventManager>().AddToPumpkinPickCount();
         //This commented code will be relevant when we have rotation code down
         triggerScript.targetPumpkin.transform.position = grabLocation.transform.position;
+        //Old Code that made rotation but doesnt matter anymore
         //triggerScript.targetPumpkin.transform.position = ghostPosition.position + ghostMovement.lastRecordedInput;
     }
 }
