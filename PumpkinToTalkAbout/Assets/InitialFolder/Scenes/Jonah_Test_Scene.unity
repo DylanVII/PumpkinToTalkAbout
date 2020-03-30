@@ -246,6 +246,7 @@ MonoBehaviour:
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 2
+  isAGhost: 0
 --- !u!114 &38919261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +389,7 @@ MonoBehaviour:
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 3
+  isAGhost: 0
 --- !u!114 &147223088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1573,7 @@ MonoBehaviour:
   accelTime: 0.25
   decelTime: 0.5
   playerNum: 1
+  isAGhost: 0
 --- !u!114 &628867463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,9 +1598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a12b880b1473c40952fc2255e18731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwStrength: 10
   javelinPrefab: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
     type: 3}
+  throwStrength: 10
+  reelStrength: 5
+  javelinDuration: 4
 --- !u!1 &798458755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,6 +2730,7 @@ MonoBehaviour:
   accelTime: 0.3
   decelTime: 0.3
   playerNum: 4
+  isAGhost: 0
 --- !u!114 &1359171244
 MonoBehaviour:
   m_ObjectHideFlags: 0
