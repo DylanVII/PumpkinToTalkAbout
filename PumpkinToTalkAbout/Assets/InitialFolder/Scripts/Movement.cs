@@ -72,8 +72,13 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown("up") || Input.GetKeyDown("down") || Input.GetKeyDown("left") || Input.GetKeyDown("right") && playerNum == 2)
             usingController = false;
 
+        if (Input.GetKeyDown("t") || Input.GetKeyDown("f") || Input.GetKeyDown("g") || Input.GetKeyDown("h") && playerNum == 3)
+            usingController = false;
 
-        if (!usingController && playerNum < 3)
+        if (Input.GetKeyDown("i") || Input.GetKeyDown("j") || Input.GetKeyDown("k") || Input.GetKeyDown("l") && playerNum == 4)
+            usingController = false;
+
+        if (!usingController)
         {
             //General Movement (Keyboard)
             input.x = Input.GetAxisRaw("HorizontalK_P" + playerNum);

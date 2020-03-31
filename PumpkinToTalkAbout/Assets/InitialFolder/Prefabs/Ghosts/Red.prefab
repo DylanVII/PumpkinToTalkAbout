@@ -85,7 +85,7 @@ MonoBehaviour:
   turnSpeed: 10
   accelTime: 0.3
   decelTime: 0.3
-  playerNum: 3
+  playerNum: 4
   isAGhost: 1
 --- !u!114 &7722747059169156378
 MonoBehaviour:
