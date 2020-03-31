@@ -38,7 +38,6 @@ public class Pick_Up : MonoBehaviour
         //if the b button is pressed and the hitbox is triggering with a pumpkin Grab the pumpkin
         if (Input.GetButton("Fire2") || Input.GetKey("b"))
         {
-            Debug.Log("Button B is pressed");
             //set the active hitbox color
            // grabHitbox.GetComponent<MeshRenderer>().material = onHitbox;
             if (triggerScript.triggered)
@@ -49,7 +48,7 @@ public class Pick_Up : MonoBehaviour
         }
         else
         {
-            ghostMovement.maxSpeed = originalSpeed;
+            ghostMovement.maxSpeed = originalSpeed; 
             //set the hitbox to inactive color
            // grabHitbox.GetComponent<MeshRenderer>().material = offHitbox;
         }
