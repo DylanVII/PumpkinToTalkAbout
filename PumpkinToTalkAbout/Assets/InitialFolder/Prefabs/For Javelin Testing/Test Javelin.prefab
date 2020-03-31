@@ -149,6 +149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pitchfork
       objectReference: {fileID: 0}
+    - target: {fileID: 326680701022325867, guid: 217c8b99acd66b14b8661fe1063b5005,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 217c8b99acd66b14b8661fe1063b5005, type: 3}
 --- !u!4 &3761454954409954733 stripped
