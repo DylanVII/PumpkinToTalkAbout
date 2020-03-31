@@ -289,6 +289,8 @@ MonoBehaviour:
   grabHitbox: {fileID: 1099873832}
   hitBox: {fileID: 1099873835}
   triggerScript: {fileID: 1099873834}
+  originalSpeed: 0
+  holdingPumpkinSpeed: 13
 --- !u!114 &38919264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +431,8 @@ MonoBehaviour:
   grabHitbox: {fileID: 195794281}
   hitBox: {fileID: 195794284}
   triggerScript: {fileID: 195794283}
+  originalSpeed: 0
+  holdingPumpkinSpeed: 0
 --- !u!4 &147223092
 Transform:
   m_ObjectHideFlags: 0
@@ -1625,9 +1629,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   javelinPrefab: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
     type: 3}
+  pitchforkSpawnLocation: {fileID: 0}
   throwStrength: 25
   reelStrength: 1000
   javelinDuration: 4
+  maxJavelinCooldown: 2
+  currentJavelinCooldown: 0
 --- !u!1001 &670457895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3222,6 +3229,8 @@ MonoBehaviour:
   grabHitbox: {fileID: 1979053489}
   hitBox: {fileID: 1979053492}
   triggerScript: {fileID: 1979053491}
+  originalSpeed: 0
+  holdingPumpkinSpeed: 0
 --- !u!4 &1359171248
 Transform:
   m_ObjectHideFlags: 0

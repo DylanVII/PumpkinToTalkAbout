@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     float angle;
 
     [SerializeField]
-    private float maxSpeed;
+    public float maxSpeed;
     public Vector3 input;
     public float turnSpeed;
 

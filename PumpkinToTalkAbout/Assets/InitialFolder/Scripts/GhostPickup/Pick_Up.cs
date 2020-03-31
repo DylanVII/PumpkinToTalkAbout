@@ -12,6 +12,9 @@ public class Pick_Up : MonoBehaviour
     public Triggered triggerScript;
 
     private GameObject eventManager;
+
+    public float originalSpeed;
+    public float holdingPumpkinSpeed;
    // public Material onHitbox;
     //public Material offHitbox;
     
@@ -21,6 +24,7 @@ public class Pick_Up : MonoBehaviour
         eventManager = GameObject.FindGameObjectWithTag("EventManager");
         ghostMovement = GetComponent<Movement>();
         ghostPosition = GetComponent<Transform>();
+        originalSpeed = ghostMovement.maxSpeed;
     }
 
 
@@ -39,11 +43,13 @@ public class Pick_Up : MonoBehaviour
            // grabHitbox.GetComponent<MeshRenderer>().material = onHitbox;
             if (triggerScript.triggered)
             {
+                ghostMovement.maxSpeed = holdingPumpkinSpeed;
                 GrabPumpkin();
             }
         }
         else
         {
+            ghostMovement.maxSpeed = originalSpeed;
             //set the hitbox to inactive color
            // grabHitbox.GetComponent<MeshRenderer>().material = offHitbox;
         }
