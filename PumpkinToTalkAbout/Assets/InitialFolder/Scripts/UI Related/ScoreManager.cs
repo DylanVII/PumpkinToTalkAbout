@@ -69,6 +69,8 @@ public class ScoreManager : MonoBehaviour
             eventManager.GetComponent<EventManager>().AddToPumpkinScoreCount();
 
             pointScored();
+
+            Destroy(other.gameObject);
         }
 
     }
