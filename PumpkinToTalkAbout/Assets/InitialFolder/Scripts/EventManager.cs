@@ -21,7 +21,7 @@ public class EventManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            pitchforkButtonPressed += 1;
+            //pitchforkButtonPressed += 1;
         }
 
      
