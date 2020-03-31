@@ -16,5 +16,15 @@ public class Scene_Manager : MonoBehaviour
         Application.Quit();
     }
 
+    public void BackButton()
+    {
+        SceneManager.LoadScene("Tittle_Screen");
+    }
+
+    public void ControlsButton()
+    {
+
+        SceneManager.LoadScene("Controls");
+    }
 
 }
