@@ -48,8 +48,19 @@ public class ScoreManager : MonoBehaviour
 
     public void AllPumpkinsCollected()
     {
-        if (remainingPumpkins == 0)
+        if (remainingPumpkins <= 0 || Input.GetKeyDown("p"))
+        {
+
+            eventManager.GetComponent<EventManager>().AnalyseGhosts();
+            eventManager.GetComponent<EventManager>().UsedPitchfork();
+
+
+            Destroy(eventManager);
+            Debug.Log("Data Sent");
+
             SceneManager.LoadScene("GhostWin");
+        }
+           
 
     }
     private void OnTriggerEnter(Collider other)

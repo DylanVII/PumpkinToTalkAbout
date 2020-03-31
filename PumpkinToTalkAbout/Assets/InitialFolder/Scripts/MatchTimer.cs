@@ -15,6 +15,8 @@ public class MatchTimer : MonoBehaviour
 
     float timeLeft;
 
+    public GameObject eventThing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,13 @@ public class MatchTimer : MonoBehaviour
     void timerEnded()
     {
         //Do your stuff here.
+        eventThing.GetComponent<EventManager>().AnalyseGhosts();
+        eventThing.GetComponent<EventManager>().UsedPitchfork();
+
+
         Debug.Log("End me please");
+        Destroy(eventThing);
+
 
         SceneManager.LoadScene("FarmerWin");
 
