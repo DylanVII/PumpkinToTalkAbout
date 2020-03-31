@@ -3447,7 +3447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pitchforkButtonPressed: 0
   pitchforkHitGhost: 0
+  pumpkinsPickedUpFloat: 0
   pumpkinsPickedUp: 0
+  pumpkinString: 
   steppedOnPressurePlate: 0
   pumpkinScore: 0
 --- !u!4 &1646844876
