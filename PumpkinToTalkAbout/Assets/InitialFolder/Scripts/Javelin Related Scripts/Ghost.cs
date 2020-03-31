@@ -64,6 +64,8 @@ public class Ghost : MonoBehaviour
     {
         Debug.Log("Stunned!");
 
+        rigidbody.velocity = new Vector3(0, 0);
+
         if (canMove)
         {
             canMove = false;
