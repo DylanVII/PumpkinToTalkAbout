@@ -12,11 +12,15 @@ public class ScoreManager : MonoBehaviour
     public Text collectedPumpkinsText;
     public Text remainingPumpkinsText;
 
+    public RawImage ghostIcon;
+
     private GameObject eventManager;
+    Ghost ghostscript;
 
     // Start is called before the first frame update
     void Start()
     {
+        ghostscript = GetComponent<Ghost>();
         eventManager = GameObject.FindGameObjectWithTag("EventManager");
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
         remainingPumpkinsText.text = "Pumpkins Left: " + remainingPumpkins;
@@ -62,6 +66,16 @@ public class ScoreManager : MonoBehaviour
            
 
     }
+
+    void Caught()
+    {
+        if (ghostscript.canMove == false)
+        {
+            Debug.Log("sexy");
+            ghostIcon.color = Color.red;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Pumpkin")
