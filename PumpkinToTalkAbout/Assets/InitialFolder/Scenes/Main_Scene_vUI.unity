@@ -290,7 +290,7 @@ MonoBehaviour:
   hitBox: {fileID: 1099873835}
   triggerScript: {fileID: 1099873834}
   originalSpeed: 0
-  holdingPumpkinSpeed: 13
+  holdingPumpkinSpeed: 10
 --- !u!114 &38919264
 MonoBehaviour:
   m_ObjectHideFlags: 0
