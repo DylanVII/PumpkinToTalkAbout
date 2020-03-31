@@ -25,10 +25,15 @@ public class ThrowJavelin : MonoBehaviour
     public float maxJavelinCooldown = 2f;
     public float currentJavelinCooldown;
 
+    private GameObject eventManager;
+
     public void Start()
     {
         if (!pitchforkSpawnLocation)
             pitchforkSpawnLocation = GetComponentsInChildren<Transform>()[1];
+
+        if (!eventManager)
+            eventManager = GameObject.Find("EventManager");
     }
 
     public void CreateJavelin()
@@ -54,6 +59,8 @@ public class ThrowJavelin : MonoBehaviour
         {
             if (currentJavelinCooldown <= 0)
             {
+                eventManager.GetComponent<EventManager>().pitchforkButtonPressed++;
+
                 currentJavelinCooldown = maxJavelinCooldown;
                 CreateJavelin();
             }

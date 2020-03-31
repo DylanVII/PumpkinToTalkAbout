@@ -7,7 +7,9 @@ public class EventManager : MonoBehaviour
 {
     public int pitchforkButtonPressed;
     public int pitchforkHitGhost;
+    public float pumpkinsPickedUpFloat;
     public int pumpkinsPickedUp;
+    public string pumpkinString;
     public int steppedOnPressurePlate;
     public int pumpkinScore;
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class EventManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            pitchforkButtonPressed += 1;
+            //pitchforkButtonPressed += 1;
         }
 
      
@@ -31,7 +33,9 @@ public class EventManager : MonoBehaviour
     //Functions called by other objects
     public void AddToPumpkinPickCount()
     {
-        pumpkinsPickedUp += 1;
+        pumpkinsPickedUpFloat += Time.deltaTime;
+        pumpkinString = pumpkinsPickedUpFloat.ToString("f0");
+        int.TryParse(pumpkinString, out pumpkinsPickedUp);
     }
     public void AddToSteppedOnPressurePlate()
     {
