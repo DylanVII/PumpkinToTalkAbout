@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c552a8cb1ff9489e11cda7a6780ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 10
+  maxTime: 120
   timePassing: 0
   timerText: {fileID: 998256079}
   eventThing: {fileID: 1646844873}
