@@ -66,6 +66,8 @@ MonoBehaviour:
   grabHitbox: {fileID: 7042696995271622956}
   hitBox: {fileID: 7042696995271622953}
   triggerScript: {fileID: 7042696995271622958}
+  originalSpeed: 0
+  holdingPumpkinSpeed: 9
 --- !u!114 &7042696995215877738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  maxStunDuration: 3
+  maxStunDuration: 2
   currentStunDuration: 0
   stunnableTags:
   - Hedge

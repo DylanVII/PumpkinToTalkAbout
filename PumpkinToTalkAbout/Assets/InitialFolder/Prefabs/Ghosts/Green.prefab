@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  maxStunDuration: 3
+  maxStunDuration: 2
   currentStunDuration: 0
   stunnableTags:
   - Hedge
