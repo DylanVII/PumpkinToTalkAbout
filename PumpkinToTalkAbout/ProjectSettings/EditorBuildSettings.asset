@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/InitialFolder/Scenes/Archive/Main_Game_OLD.unity
-    guid: 63cbc63ef167b2e4eb21f44657418a3f
+    path: Assets/InitialFolder/Scenes/Main Game/Tittle_Screen.unity
+    guid: 78e3729c1628c25429e23e33310d9ef5
+  - enabled: 1
+    path: Assets/InitialFolder/Scenes/Main Game/Main_Scene_v4.unity
+    guid: c5b3e74a90c1b284fa44caed9034a996
+  - enabled: 1
+    path: Assets/InitialFolder/Scenes/GhostWin.unity
+    guid: aaab385f8dc836647ad1ab828991671d
+  - enabled: 1
+    path: Assets/InitialFolder/Scenes/FarmerWin.unity
+    guid: 10d7364311524fc48ab01f07a872abbd
   m_configObjects: {}
