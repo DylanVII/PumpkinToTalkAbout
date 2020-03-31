@@ -19,9 +19,12 @@ public class ThrowJavelin : MonoBehaviour
 
     public float javelinDuration = 4f;
 
+    public float maxJavelinCooldown = 2f;
+    public float currentJavelinCooldown;
+
     public void CreateJavelin()
     {
-        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward, transform.rotation, null);
+        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward * 5f, transform.rotation, null);
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
         javelin.transform.Rotate(new Vector3(90, 0, 0));
 
@@ -34,10 +37,17 @@ public class ThrowJavelin : MonoBehaviour
 
     void Update()
     {
+        if (currentJavelinCooldown > 0)
+            currentJavelinCooldown -= Time.deltaTime;
+
         //PRIMITIVE CHECK; REVISE LATER
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CreateJavelin();
+            if (currentJavelinCooldown <= 0)
+            {
+                currentJavelinCooldown = maxJavelinCooldown;
+                CreateJavelin();
+            }
         }
     }
 }
