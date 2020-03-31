@@ -38,7 +38,6 @@ public class ScoreManager : MonoBehaviour
             remainingPumpkins -= 1;
         }
 
-        Debug.Log("Something is being gay");
         collectedPumpkins += 1;
         remainingPumpkins -= 1;
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
@@ -68,7 +67,7 @@ public class ScoreManager : MonoBehaviour
         if (other.tag == "Pumpkin")
         {
             eventManager.GetComponent<EventManager>().AddToPumpkinScoreCount();
-            Debug.Log("Something is being gay");
+
             pointScored();
         }
 
