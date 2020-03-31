@@ -2449,6 +2449,8 @@ MonoBehaviour:
   remainingPumpkins: 5
   collectedPumpkinsText: {fileID: 1726822479}
   remainingPumpkinsText: {fileID: 1914219091}
+  ghostIcon: {fileID: 1261583657}
+  ghostscript: {fileID: 38919264}
 --- !u!1001 &1073376828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5102,6 +5104,8 @@ MonoBehaviour:
   remainingPumpkins: 5
   collectedPumpkinsText: {fileID: 1726822479}
   remainingPumpkinsText: {fileID: 1914219091}
+  ghostIcon: {fileID: 0}
+  ghostscript: {fileID: 0}
 --- !u!4 &2024718010
 Transform:
   m_ObjectHideFlags: 0
