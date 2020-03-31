@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     {
         eventManager = GameObject.FindGameObjectWithTag("EventManager");
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
-        remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
+        remainingPumpkinsText.text = "Pumpkins Left: " + remainingPumpkins;
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class ScoreManager : MonoBehaviour
         collectedPumpkins += 1;
         remainingPumpkins -= 1;
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
-        remainingPumpkinsText.text = "Remaining Pumpkins " + remainingPumpkins;
+        remainingPumpkinsText.text = "Pumpkins Left: " + remainingPumpkins;
 
     }
 
