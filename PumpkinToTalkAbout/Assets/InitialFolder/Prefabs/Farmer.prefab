@@ -1181,7 +1181,7 @@ MonoBehaviour:
   turnSpeed: 10
   accelTime: 0.25
   decelTime: 0.5
-  playerNum: 2
+  playerNum: 1
   isAGhost: 0
 --- !u!114 &4048587070568828293
 MonoBehaviour:
@@ -1209,9 +1209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   javelinPrefab: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
     type: 3}
+  pitchforkSpawnLocation: {fileID: 0}
   throwStrength: 25
   reelStrength: 1000
-  javelinDuration: 4
+  javelinDuration: 2
   maxJavelinCooldown: 2
   currentJavelinCooldown: 0
 --- !u!1 &5419839898592934007
