@@ -24,8 +24,7 @@ public class EventManager : MonoBehaviour
             pitchforkButtonPressed += 1;
         }
 
-        AnalyseGhosts();
-        UsedPitchfork();
+     
     }
 
 
