@@ -66,6 +66,8 @@ MonoBehaviour:
   grabHitbox: {fileID: 3077197102315195169}
   hitBox: {fileID: 3077197102315195172}
   triggerScript: {fileID: 3077197102315195171}
+  originalSpeed: 0
+  holdingPumpkinSpeed: 9
 --- !u!114 &3077197101850783803
 MonoBehaviour:
   m_ObjectHideFlags: 0
