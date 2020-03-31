@@ -20,7 +20,7 @@ public class MatchTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timerText.text = "Time left " + timeLeft;
+        timerText.text = " " + timeLeft.ToString("f0");
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class MatchTimer : MonoBehaviour
 
         TimerFunction();
 
-        timerText.text = "Time left " + timeLeft;
+        timerText.text = " " + timeLeft.ToString("f0");
     }
 
     void TimerFunction()
