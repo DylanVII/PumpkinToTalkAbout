@@ -48,7 +48,7 @@ public class Javelin : MonoBehaviour
     {
 
         if (isReeling)
-            PullObjectToLocation(parent.transform.position, reelSpeed);
+            PullObjectToLocation(parent.transform.position + new Vector3(0,2), reelSpeed);
 
         if (!isReeling)
             DestroyAfterDuration();

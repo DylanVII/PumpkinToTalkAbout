@@ -13,6 +13,9 @@ public class ThrowJavelin : MonoBehaviour
     [SerializeField]
     private GameObject javelinPrefab;
 
+    [SerializeField]
+    private Transform pitchforkSpawnLocation;
+
     [Header("Adjustable Parameters")]
     public float throwStrength = 10f;
     public float reelStrength = 5f;
@@ -22,9 +25,15 @@ public class ThrowJavelin : MonoBehaviour
     public float maxJavelinCooldown = 2f;
     public float currentJavelinCooldown;
 
+    public void Start()
+    {
+        if (!pitchforkSpawnLocation)
+            pitchforkSpawnLocation = GetComponentsInChildren<Transform>()[1];
+    }
+
     public void CreateJavelin()
     {
-        GameObject javelin = Instantiate(javelinPrefab, transform.position + Vector3.forward * 5f, transform.rotation, null);
+        GameObject javelin = Instantiate(javelinPrefab, pitchforkSpawnLocation.position, transform.rotation, null);
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
         javelin.transform.Rotate(new Vector3(90, 0, 0));
 

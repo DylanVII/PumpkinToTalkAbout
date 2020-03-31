@@ -1458,6 +1458,8 @@ MonoBehaviour:
   throwStrength: 25
   reelStrength: 1000
   javelinDuration: 4
+  maxJavelinCooldown: 2
+  currentJavelinCooldown: 0
 --- !u!1001 &670457895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2279,6 +2281,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761454954409954733, guid: bb5f53762c9a93447baabe05f34123d3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761454954409954733, guid: bb5f53762c9a93447baabe05f34123d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.86
+      objectReference: {fileID: 0}
     - target: {fileID: 4509060746549735521, guid: bb5f53762c9a93447baabe05f34123d3,
         type: 3}
       propertyPath: m_Name
@@ -2338,6 +2350,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297832938397850098, guid: bb5f53762c9a93447baabe05f34123d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485188283172514524, guid: bb5f53762c9a93447baabe05f34123d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb5f53762c9a93447baabe05f34123d3, type: 3}
