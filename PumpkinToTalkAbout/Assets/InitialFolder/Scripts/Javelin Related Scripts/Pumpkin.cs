@@ -52,7 +52,10 @@ public class Pumpkin : MonoBehaviour
         {
             //Debug.Log("Mirroring Pitchfork transform...");
             //Debug.Log(parentTransform.GetComponent<Rigidbody>().velocity);
-            rigidbody.velocity = parentTransform.GetComponent<Rigidbody>().velocity;
+            //rigidbody.velocity = parentTransform.GetComponent<Rigidbody>().velocity;
+            transform.position = new Vector3(parentTransform.position.x,
+                                             transform.position.y,
+                                             parentTransform.position.z);
         }
     }
 }

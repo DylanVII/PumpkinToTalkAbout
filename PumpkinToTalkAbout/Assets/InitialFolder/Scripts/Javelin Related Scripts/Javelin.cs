@@ -70,7 +70,7 @@ public class Javelin : MonoBehaviour
     {
         if (Vector3.Distance(endPosition, transform.position) > 0.5f)
         {
-            float step = reelingSpeed * Time.deltaTime;
+            float step = reelingSpeed * 90f * Time.deltaTime;
 
             Vector3 direction = endPosition - transform.position;
             Vector3 normalizedDirection = direction.normalized;

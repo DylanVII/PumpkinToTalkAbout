@@ -165,6 +165,7 @@ MonoBehaviour:
   stunnableTags:
   - Hedge
   - Fence
+  - Player
   status: 0
   parentTransform: {fileID: 0}
 --- !u!54 &5080426247409619632
