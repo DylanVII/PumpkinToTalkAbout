@@ -13,7 +13,8 @@ using UnityEngine;
 public class Javelin : MonoBehaviour
 {
     private new Collider collider;
-        
+
+    [Header("DO NOT MODIFY IN INSPECTOR")]
     public GameObject parent;
 
     [SerializeField]
@@ -48,10 +49,12 @@ public class Javelin : MonoBehaviour
     {
 
         if (isReeling)
-            PullObjectToLocation(parent.transform.position + new Vector3(0,2), reelSpeed);
+            PullObjectToLocation(parent.transform.position + new Vector3(0, 2), reelSpeed);
 
         if (!isReeling)
             DestroyAfterDuration();
+
+        
     }
 
 
@@ -65,16 +68,18 @@ public class Javelin : MonoBehaviour
      */
     public void PullObjectToLocation(Vector3 endPosition, float reelingSpeed)
     {
-        if (Vector3.Distance(endPosition,transform.position) > 0.5f)
+        if (Vector3.Distance(endPosition, transform.position) > 0.5f)
         {
             float step = reelingSpeed * Time.deltaTime;
-            //transform.position = Vector3.MoveTowards(transform.position, endPosition, step);
 
             Vector3 direction = endPosition - transform.position;
             Vector3 normalizedDirection = direction.normalized;
 
 
             GetComponent<Rigidbody>().velocity = normalizedDirection * step;
+
+            Quaternion rotation = Quaternion.LookRotation(-direction, Vector3.up);
+            transform.rotation = rotation;
         }
         else
         {
@@ -115,50 +120,61 @@ public class Javelin : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Pumpkin")
+        switch (other.gameObject.tag)
         {
-            isReeling = true;
+            case "Pumpkin":
+                isReeling = true;
 
-            GameObject pumpkin = other.gameObject;
-            Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
+                GameObject pumpkin = other.gameObject;
+                Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
 
-            //Movement-oriented variables
-            pumpkinScript.isGrabbed = true;
-            pumpkinScript.parentTransform = transform;
-            pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+                //Movement-oriented variables
+                pumpkinScript.isGrabbed = true;
+                pumpkinScript.parentTransform = transform;
+                pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
-            attachedObject = pumpkin;
+                attachedObject = pumpkin;
 
-            //Disable unnecessary collisions when reeling.
-            collider.enabled = false;
-        }
+                //Disable unnecessary collisions when reeling.
+                collider.enabled = false;
 
-        if (other.gameObject.tag == "Ghost")
-        {
-            //Debug.Log("Impaled a ghost boi");
+                break;
+                
+            case "Ghost":
 
-            eventManager.GetComponent<EventManager>().AddToGhostHitCount();
+                //Debug.Log("Impaled a ghost boi");
 
-            //Do stun code
-            isReeling = true;
+                eventManager.GetComponent<EventManager>().AddToGhostHitCount();
 
-            GameObject ghost = other.gameObject;
-            Ghost ghostScript = ghost.GetComponent<Ghost>();
+                //Do stun code
+                isReeling = true;
 
-            ghostScript.canMove = false;
-            ghostScript.status = Ghost._states.grabbed;
-            ghostScript.currentStunDuration = ghostScript.maxStunDuration;
+                GameObject ghost = other.gameObject;
+                Ghost ghostScript = ghost.GetComponent<Ghost>();
 
-            //Movement-oriented variables
-            ghostScript.parentTransform = transform;
-            ghost.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                ghostScript.canMove = false;
+                ghostScript.status = Ghost._states.grabbed;
+                ghostScript.currentStunDuration = ghostScript.maxStunDuration;
 
-            //attachedObject = ghost;
+                //Movement-oriented variables
+                ghostScript.parentTransform = transform;
+                ghost.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
-            //Disable unnecessary collisions when reeling.
-            collider.enabled = false;
+                //attachedObject = ghost;
 
+                //Disable unnecessary collisions when reeling.
+                collider.enabled = false;
+
+                break;
+
+
+            case "Fence":
+
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+
+                break;
         }
     }
+
 
 }

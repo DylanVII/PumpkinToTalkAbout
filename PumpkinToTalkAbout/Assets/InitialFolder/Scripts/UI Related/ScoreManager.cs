@@ -73,7 +73,6 @@ public class ScoreManager : MonoBehaviour
     {
         if (!ghostscript.canMove)
         {
-            Debug.Log("sexy");
             //ghostIcon.color = new Color(61,61,61,255);
             ghostIcon.color = Color.red;
         }

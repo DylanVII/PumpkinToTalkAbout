@@ -26,6 +26,7 @@ public class ThrowJavelin : MonoBehaviour
     public float currentJavelinCooldown;
 
     private GameObject eventManager;
+    private Animator anim;
 
     public void Start()
     {
@@ -34,13 +35,18 @@ public class ThrowJavelin : MonoBehaviour
 
         if (!eventManager)
             eventManager = GameObject.Find("EventManager");
+
+        if (!anim && GetComponent<Animator>())
+            anim = GetComponent<Animator>();
     }
 
     public void CreateJavelin()
     {
+        anim.SetTrigger("triggerThrow");
+
         GameObject javelin = Instantiate(javelinPrefab, pitchforkSpawnLocation.position, transform.rotation, null);
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
-        javelin.transform.Rotate(new Vector3(90, 0, 0));
+        javelin.transform.Rotate(new Vector3(0, 0, 0));
 
         Javelin javelinScript = javelin.GetComponent<Javelin>();
 
