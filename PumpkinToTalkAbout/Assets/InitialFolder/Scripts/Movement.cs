@@ -172,7 +172,9 @@ public class Movement : MonoBehaviour
     void Rotate()
     {
         targetRot = Quaternion.Euler(0, angle, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, turnSpeed * Time.deltaTime);
+
+        if (input.x > 0 || input.x < 0 || input.z > 0 || input.z < 0)
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, turnSpeed * Time.deltaTime);
     }
 
 

@@ -4877,21 +4877,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue
       objectReference: {fileID: 0}
-    - target: {fileID: 4975966762617593809, guid: a24fd1e062051c84e888d45c80ecf547,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975966762617593809, guid: a24fd1e062051c84e888d45c80ecf547,
-        type: 3}
-      propertyPath: m_Drag
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975966762617593814, guid: a24fd1e062051c84e888d45c80ecf547,
-        type: 3}
-      propertyPath: playerNum
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4975966762617593835, guid: a24fd1e062051c84e888d45c80ecf547,
         type: 3}
       propertyPath: m_LocalPosition.x

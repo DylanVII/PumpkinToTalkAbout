@@ -68,7 +68,7 @@ public class Javelin : MonoBehaviour
      */
     public void PullObjectToLocation(Vector3 endPosition, float reelingSpeed)
     {
-        if (Vector3.Distance(endPosition, transform.position) > 0.5f)
+        if (Vector3.Distance(endPosition, transform.position) > 1.5f)
         {
             float step = reelingSpeed * 90f * Time.deltaTime;
 
