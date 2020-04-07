@@ -85,7 +85,6 @@ public class Ghost : MonoBehaviour
 
     public void Grabbed()
     {
-        Debug.Log("Grabbed!");
 
         if (canMove)
         {
