@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    //Pumpkin Count Related
     public int collectedPumpkins;
     public int remainingPumpkins;
 
+    //Used for UI
     public Text collectedPumpkinsText;
     public Text remainingPumpkinsText;
 
+    //Used to highlight ghost
     public RawImage ghostIcon;
 
+    //Used to access x
     private GameObject eventManager;
     public Ghost ghostscript;
 
@@ -31,19 +35,20 @@ public class ScoreManager : MonoBehaviour
     {
         Caught();
 
-        //pointScored();
         AllPumpkinsCollected();
     }
 
 
     public void pointScored()
     {
+        //Dev control
         if (Input.GetKeyDown("p"))
         {
             collectedPumpkins += 1;
             remainingPumpkins -= 1;
         }
 
+        //Changes value based on call
         collectedPumpkins += 1;
         remainingPumpkins -= 1;
         collectedPumpkinsText.text = "Collected Pumpkins " + collectedPumpkins;
@@ -51,17 +56,18 @@ public class ScoreManager : MonoBehaviour
 
     }
 
+    //Called only if all pumpkins were collected
     public void AllPumpkinsCollected()
     {
+        //Checks that there are no remaining pumpkins or by dev control
         if (remainingPumpkins <= 0 || Input.GetKeyDown("p"))
         {
-
+            //Analytic related
             eventManager.GetComponent<EventManager>().AnalyseGhosts();
             eventManager.GetComponent<EventManager>().UsedPitchfork();
 
-
+            //Destroys eventmanger to proc analytic to send data to server
             Destroy(eventManager);
-            Debug.Log("Data Sent");
 
             SceneManager.LoadScene("GhostWin");
         }
@@ -69,11 +75,12 @@ public class ScoreManager : MonoBehaviour
 
     }
 
+    //Changes Ghost icon colour when hit
     void Caught()
     {
         if (!ghostscript.canMove)
         {
-            //ghostIcon.color = new Color(61,61,61,255);
+            
             ghostIcon.color = Color.red;
         }
         else if (ghostscript.canMove)
@@ -82,6 +89,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    //Used to score the pumpkin and destroy it afte scoring
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Pumpkin")

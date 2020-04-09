@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PressureTurnOn : MonoBehaviour
 {
+
+    //This script is for the pressure pad that turns on the real pressure pad.
+
     public bool steppedOnBool;
     public bool steppedOff;
 
@@ -14,11 +17,6 @@ public class PressureTurnOn : MonoBehaviour
 
     public GameObject pressurePad;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,7 +29,7 @@ public class PressureTurnOn : MonoBehaviour
         //If the pressure pad was stepped on then
         if (steppedOnBool)
         {
-            //Ensure the door won't come down (Must discuss whether or not want this to forever stay up when something is on pad)
+            
             timePassing = 0;
 
 

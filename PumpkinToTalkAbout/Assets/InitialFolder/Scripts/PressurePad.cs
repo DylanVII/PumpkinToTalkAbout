@@ -33,7 +33,7 @@ public class PressurePad : MonoBehaviour
         //If the pressure pad was stepped on then
         if (steppedOnBool)
         {
-            //Ensure the door won't come down (Must discuss whether or not want this to forever stay up when something is on pad)
+            //Ensure the door won't come down 
             timePassing = 0;
 
             //Raise the door hedge
@@ -46,7 +46,7 @@ public class PressurePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        //Can only be used by ghosts
         if (other.gameObject.tag == "Ghost")
             steppedOnBool = true;
     }

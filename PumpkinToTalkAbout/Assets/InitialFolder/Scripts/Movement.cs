@@ -47,6 +47,7 @@ public class Movement : MonoBehaviour
         if (!ghostScript && GetComponent<Ghost>())
             ghostScript = GetComponent<Ghost>();
 
+        //Identifies whether current attached character is a ghost or the farmer
         if (gameObject.tag == "Ghost")
             isAGhost = true;
         else

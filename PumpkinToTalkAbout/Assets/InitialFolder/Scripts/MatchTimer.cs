@@ -33,6 +33,7 @@ public class MatchTimer : MonoBehaviour
         timerText.text = " " + timeLeft.ToString("f0");
     }
 
+    //Checks for if the playtime has passed the maximum time and if so, do x
     void TimerFunction()
     {
         timePassing += Time.deltaTime;
@@ -44,12 +45,11 @@ public class MatchTimer : MonoBehaviour
     }
     void timerEnded()
     {
-        //Do your stuff here.
+        //Analytic related
         eventThing.GetComponent<EventManager>().AnalyseGhosts();
         eventThing.GetComponent<EventManager>().UsedPitchfork();
 
 
-        Debug.Log("End me please");
         Destroy(eventThing);
 
 

@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class DevControls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    //Dev control to skip a level
     void Update()
     {
         
