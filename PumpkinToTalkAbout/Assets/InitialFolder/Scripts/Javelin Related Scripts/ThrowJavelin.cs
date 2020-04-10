@@ -19,8 +19,6 @@ public class ThrowJavelin : MonoBehaviour
     private GameObject eventManager;
     private Animator anim;
 
-    private List<GameObject> toolInventory;
-
 
     [Header("Adjustable Parameters")]
     public float throwStrength = 10f;
@@ -31,7 +29,8 @@ public class ThrowJavelin : MonoBehaviour
     public float maxJavelinCooldown = 2f;
     public float currentJavelinCooldown;
 
-
+    [Header("Farmer's Inventory")]
+    public List<GameObject> toolInventory;
 
 
     public void Start()
@@ -45,15 +44,15 @@ public class ThrowJavelin : MonoBehaviour
         if (!anim && GetComponent<Animator>())
             anim = GetComponent<Animator>();
 
-        //Initialize new list
-        toolInventory = new List<GameObject>();
+        
+        InstantiateToolsInInventory();
     }
 
 
 
-    /* CreateJavelin()
+    /* TossJavelin()
      * ---------------
-     * Instantiates a Pitchfork at a gameobject's location.
+     * Enables a Pitchfork at a gameobject's location.
      * Sets the rotation, speed, duration, etc. of the pitchfork here. As such, all parameters meant to
      * affect the Pitchfork should be tweaked in this script!
      */
@@ -61,7 +60,8 @@ public class ThrowJavelin : MonoBehaviour
     {
         anim.SetTrigger("triggerThrow");
 
-        GameObject javelin = Instantiate(javelinPrefab, pitchforkSpawnLocation.position, transform.rotation, null);
+        GameObject javelin = toolInventory[0];
+
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
         javelin.transform.Rotate(new Vector3(0, 0, 0));
 
@@ -72,7 +72,23 @@ public class ThrowJavelin : MonoBehaviour
         javelinScript.maxDuration = javelinDuration;
     }
 
-
+    /* InstantiateToolsInInventory()
+     * -----------------------------
+     * Instantiates and disables all GameObjects in the Farmer's inventory.
+     * Like a poor-man's object pool.
+     * Can fully support a single projectile, but still needs work to support multiple.
+     * Intended for Pitchforks ONLY, but doesn't currently have a way to filter.
+     */
+    public void InstantiateToolsInInventory()
+    {
+        foreach (GameObject tool in toolInventory)
+        {
+            Debug.Log("Instantiated a " + tool.name);
+            GameObject javelin = Instantiate(tool, pitchforkSpawnLocation.position, transform.rotation, null);
+            javelin.SetActive(false);
+        }
+                
+    }
 
     void Update()
     {

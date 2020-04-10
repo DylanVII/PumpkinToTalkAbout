@@ -16,7 +16,7 @@ public class Javelin : MonoBehaviour
 
 
 
-    [Header("DO NOT MODIFY IN INSPECTOR")]
+    [Header("DO NOT MODIFY BELOW IN INSPECTOR")]
     public GameObject parent;
     public GameObject trail;
     public GameObject hitParticle;
