@@ -589,6 +589,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1002,6 +1007,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1375,6 +1385,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1791,6 +1806,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1977,6 +1997,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2607,6 +2632,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2715,6 +2745,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2985,6 +3020,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3435,7 +3475,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129684838}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3795,6 +3835,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3996,6 +4041,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4419,6 +4469,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5355,6 +5410,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5463,6 +5523,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5954,6 +6019,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0.0005683516
       objectReference: {fileID: 0}
+    - target: {fileID: 186388039, guid: 435e6a85b181a3746a8cd85bf66fb360, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 6381981492565722657, guid: 435e6a85b181a3746a8cd85bf66fb360,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7367,6 +7437,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8681478207854004074, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478207915829776, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478207918155519, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478207941177584, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     - target: {fileID: 8681478207969609136, guid: f6e4ab0a6305c474593838a0962e474c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7437,6 +7531,102 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8681478208025425512, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208184242597, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208465284139, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208582767610, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208658142721, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208671293662, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208744164426, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208890665114, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478208983230389, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209047999241, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209091706333, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209307331633, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209450586638, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209589863530, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209599672576, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
+    - target: {fileID: 8681478209737187059, guid: f6e4ab0a6305c474593838a0962e474c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a6832870453898940a1baf661f47226d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6e4ab0a6305c474593838a0962e474c, type: 3}
 --- !u!1001 &9036898798595926689
