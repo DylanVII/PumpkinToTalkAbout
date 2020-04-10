@@ -16,6 +16,9 @@ public class Javelin : MonoBehaviour
         
     public GameObject parent;
 
+    public GameObject hitParticle;
+    public GameObject trail;
+
     [SerializeField]
     private GameObject attachedObject;
 
@@ -115,9 +118,12 @@ public class Javelin : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
+
         if (other.gameObject.tag == "Pumpkin")
         {
             isReeling = true;
+            Destroy(trail);
+
 
             GameObject pumpkin = other.gameObject;
             Pumpkin pumpkinScript = pumpkin.GetComponent<Pumpkin>();
@@ -139,6 +145,8 @@ public class Javelin : MonoBehaviour
 
             eventManager.GetComponent<EventManager>().AddToGhostHitCount();
 
+            Destroy(trail);
+            hitParticle.SetActive(true);
             //Do stun code
             isReeling = true;
 
