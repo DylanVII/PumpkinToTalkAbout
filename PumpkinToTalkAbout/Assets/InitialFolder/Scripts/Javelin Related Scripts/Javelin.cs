@@ -14,8 +14,13 @@ public class Javelin : MonoBehaviour
 {
     private new Collider collider;
 
+
+
     [Header("DO NOT MODIFY IN INSPECTOR")]
     public GameObject parent;
+    public GameObject trail;
+    public GameObject hitParticle;
+
 
     [SerializeField]
     private GameObject attachedObject;
@@ -132,6 +137,7 @@ public class Javelin : MonoBehaviour
                 pumpkinScript.isGrabbed = true;
                 pumpkinScript.parentTransform = transform;
                 pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                Destroy(trail);
 
                 attachedObject = pumpkin;
 
@@ -148,6 +154,8 @@ public class Javelin : MonoBehaviour
 
                 //Do stun code
                 isReeling = true;
+                hitParticle.SetActive(true);
+                Destroy(trail);
 
                 GameObject ghost = other.gameObject;
                 Ghost ghostScript = ghost.GetComponent<Ghost>();
