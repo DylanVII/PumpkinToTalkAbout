@@ -16,6 +16,12 @@ public class ThrowJavelin : MonoBehaviour
     [SerializeField]
     private Transform pitchforkSpawnLocation;
 
+    private GameObject eventManager;
+    private Animator anim;
+
+    private List<GameObject> toolInventory;
+
+
     [Header("Adjustable Parameters")]
     public float throwStrength = 10f;
     public float reelStrength = 5f;
@@ -25,8 +31,8 @@ public class ThrowJavelin : MonoBehaviour
     public float maxJavelinCooldown = 2f;
     public float currentJavelinCooldown;
 
-    private GameObject eventManager;
-    private Animator anim;
+
+
 
     public void Start()
     {
@@ -38,9 +44,20 @@ public class ThrowJavelin : MonoBehaviour
 
         if (!anim && GetComponent<Animator>())
             anim = GetComponent<Animator>();
+
+        //Initialize new list
+        toolInventory = new List<GameObject>();
     }
 
-    public void CreateJavelin()
+
+
+    /* CreateJavelin()
+     * ---------------
+     * Instantiates a Pitchfork at a gameobject's location.
+     * Sets the rotation, speed, duration, etc. of the pitchfork here. As such, all parameters meant to
+     * affect the Pitchfork should be tweaked in this script!
+     */
+    public void TossJavelin()
     {
         anim.SetTrigger("triggerThrow");
 
@@ -55,6 +72,8 @@ public class ThrowJavelin : MonoBehaviour
         javelinScript.maxDuration = javelinDuration;
     }
 
+
+
     void Update()
     {
         if (currentJavelinCooldown > 0)
@@ -68,7 +87,7 @@ public class ThrowJavelin : MonoBehaviour
                 eventManager.GetComponent<EventManager>().pitchforkButtonPressed++;
 
                 currentJavelinCooldown = maxJavelinCooldown;
-                CreateJavelin();
+                TossJavelin();
             }
         }
     }
