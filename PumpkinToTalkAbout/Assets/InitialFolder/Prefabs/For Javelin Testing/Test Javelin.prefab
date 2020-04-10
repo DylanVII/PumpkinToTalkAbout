@@ -5172,6 +5172,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 0.5235849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 0.8782845
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.9713465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: UVModule.tilesX
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777525512383260423, guid: a550f4255f9636a498f7fb4f5672dd83,
+        type: 3}
+      propertyPath: UVModule.tilesY
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a550f4255f9636a498f7fb4f5672dd83, type: 3}
 --- !u!1 &2617446530877773475 stripped
