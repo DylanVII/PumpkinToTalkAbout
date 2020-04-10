@@ -1464,6 +1464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red
       objectReference: {fileID: 0}
+    - target: {fileID: 7042696995215877738, guid: f82f22863dcab1e409aa61bb10a0d29f,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7042696995215877745, guid: f82f22863dcab1e409aa61bb10a0d29f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4373,6 +4378,24 @@ MonoBehaviour:
   m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 0
+    m_ApplyRules: 0
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 0
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters: []
+    m_Name: 
 --- !u!114 &1646844875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5555,6 +5578,11 @@ PrefabInstance:
       propertyPath: playerNum
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4975966762617593814, guid: a24fd1e062051c84e888d45c80ecf547,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4975966762617593835, guid: a24fd1e062051c84e888d45c80ecf547,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5728,6 +5756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080426247409619633, guid: 22084b0c3e8f7144485f431a70cf09b1,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5080426247409619635, guid: 22084b0c3e8f7144485f431a70cf09b1,
         type: 3}
