@@ -58,6 +58,8 @@ public class ThrowJavelin : MonoBehaviour
      */
     public void TossJavelin()
     {
+        SoundManager.PlaySound("throw");
+
         anim.SetTrigger("triggerThrow");
 
         GameObject javelin = instantiatedTools[0];

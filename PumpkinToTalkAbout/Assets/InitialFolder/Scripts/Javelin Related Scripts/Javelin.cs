@@ -153,6 +153,9 @@ public class Javelin : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Pumpkin":
+
+                SoundManager.PlaySound("catch");
+
                 isReeling = true;
 
                 GameObject pumpkin = other.gameObject;
@@ -204,6 +207,8 @@ public class Javelin : MonoBehaviour
 
 
             case "Fence":
+
+                SoundManager.PlaySound("clink");
 
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
 

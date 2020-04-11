@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
         s = GetComponent<AudioSource>();
 
         stabSound = Resources.Load<AudioClip>("Stab");
+        throwSound = Resources.Load<AudioClip>("throw");
+        catchSound = Resources.Load<AudioClip>("catch");
+        clinkSound = Resources.Load<AudioClip>("clink");
     }
 
     // Update is called once per frame
@@ -38,6 +41,15 @@ public class SoundManager : MonoBehaviour
         {
             case "Stab":
                 s.PlayOneShot(stabSound);
+                break;
+            case "throw":
+                s.PlayOneShot(throwSound);
+                break;
+            case "catch":
+                s.PlayOneShot(catchSound);
+                break;
+            case "clink":
+                s.PlayOneShot(clinkSound);
                 break;
         } 
 
