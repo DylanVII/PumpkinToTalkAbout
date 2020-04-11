@@ -11,15 +11,10 @@ using UnityEngine;
 public class ThrowJavelin : MonoBehaviour
 {
     [SerializeField]
-    private GameObject javelinPrefab;
-
-    [SerializeField]
     private Transform pitchforkSpawnLocation;
 
     private GameObject eventManager;
     private Animator anim;
-
-    private List<GameObject> toolInventory;
 
 
     [Header("Adjustable Parameters")]
@@ -31,7 +26,10 @@ public class ThrowJavelin : MonoBehaviour
     public float maxJavelinCooldown = 2f;
     public float currentJavelinCooldown;
 
+    [Header("Farmer's Inventory")]
+    public List<GameObject> toolInventory;
 
+    private List<GameObject> instantiatedTools;
 
 
     public void Start()
@@ -45,15 +43,16 @@ public class ThrowJavelin : MonoBehaviour
         if (!anim && GetComponent<Animator>())
             anim = GetComponent<Animator>();
 
-        //Initialize new list
-        toolInventory = new List<GameObject>();
+
+        instantiatedTools = new List<GameObject>();
+        InstantiateToolsInInventory();
     }
 
 
 
-    /* CreateJavelin()
+    /* TossJavelin()
      * ---------------
-     * Instantiates a Pitchfork at a gameobject's location.
+     * Enables a Pitchfork at a gameobject's location.
      * Sets the rotation, speed, duration, etc. of the pitchfork here. As such, all parameters meant to
      * affect the Pitchfork should be tweaked in this script!
      */
@@ -61,9 +60,13 @@ public class ThrowJavelin : MonoBehaviour
     {
         anim.SetTrigger("triggerThrow");
 
-        GameObject javelin = Instantiate(javelinPrefab, pitchforkSpawnLocation.position, transform.rotation, null);
+        GameObject javelin = instantiatedTools[0];
+
+        javelin.SetActive(true);
+
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
-        javelin.transform.Rotate(new Vector3(0, 0, 0));
+        javelin.transform.rotation = transform.rotation;
+        javelin.transform.position = pitchforkSpawnLocation.position;
 
         Javelin javelinScript = javelin.GetComponent<Javelin>();
 
@@ -72,7 +75,26 @@ public class ThrowJavelin : MonoBehaviour
         javelinScript.maxDuration = javelinDuration;
     }
 
+    /* InstantiateToolsInInventory()
+     * -----------------------------
+     * Instantiates and disables all GameObjects in the Farmer's inventory.
+     * A poor-man's object pool.
+     * Can fully support a single projectile, but still needs work to support multiple.
+     * Intended for Pitchforks ONLY, but doesn't currently have a way to filter.
+     */
+    public void InstantiateToolsInInventory()
+    {
+        foreach (GameObject tool in toolInventory)
+        {
+            Debug.Log("Instantiated a " + tool.name);
+            GameObject javelin = Instantiate(tool, pitchforkSpawnLocation.position, transform.rotation, null);
+            
+            instantiatedTools.Add(javelin);
 
+            javelin.SetActive(false);
+        }
+                
+    }
 
     void Update()
     {

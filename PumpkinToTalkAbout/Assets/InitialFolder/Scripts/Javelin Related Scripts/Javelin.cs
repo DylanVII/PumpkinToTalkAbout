@@ -16,7 +16,7 @@ public class Javelin : MonoBehaviour
 
 
 
-    [Header("DO NOT MODIFY IN INSPECTOR")]
+    [Header("DO NOT MODIFY BELOW IN INSPECTOR")]
     public GameObject parent;
     public GameObject trail;
     public GameObject hitParticle;
@@ -37,18 +37,30 @@ public class Javelin : MonoBehaviour
 
     private GameObject eventManager;
 
-    void Start()
+    void Awake()
     {
         eventManager = GameObject.FindGameObjectWithTag("EventManager");
 
         if (!collider)
             collider = GetComponent<Collider>();
+    }
+
+    void OnEnable()
+    {
+        if (maxDuration == 0)
+            maxDuration = 1f;
 
         currentDuration = maxDuration;
 
+        //Return parameters to default
+        collider.enabled = true;
+        isReeling = false;
+        attachedObject = null;
+
+        hitParticle.SetActive(false);
+        trail.SetActive(true);
+
     }
-
-
 
     void Update()
     {
@@ -102,7 +114,7 @@ public class Javelin : MonoBehaviour
                 }
             }
 
-            Destroy(gameObject);
+            ReturnToInventory();
         }
     }
 
@@ -118,7 +130,20 @@ public class Javelin : MonoBehaviour
         currentDuration -= Time.deltaTime;
 
         if (currentDuration <= 0)
-            Destroy(gameObject);
+            ReturnToInventory();
+    }
+
+
+    /* ReturnToInventory()
+     * -------------------
+     * Disables the GameObject, resetting its state.
+     * Typically called where you'd usually destroy this object.
+     */
+    public void ReturnToInventory()
+    {
+
+
+       gameObject.SetActive(false);
     }
 
 
@@ -137,7 +162,7 @@ public class Javelin : MonoBehaviour
                 pumpkinScript.isGrabbed = true;
                 pumpkinScript.parentTransform = transform;
                 pumpkin.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                Destroy(trail);
+                trail.SetActive(false);
 
                 attachedObject = pumpkin;
 
@@ -155,7 +180,7 @@ public class Javelin : MonoBehaviour
                 //Do stun code
                 isReeling = true;
                 hitParticle.SetActive(true);
-                Destroy(trail);
+                trail.SetActive(false);
 
                 GameObject ghost = other.gameObject;
                 Ghost ghostScript = ghost.GetComponent<Ghost>();
