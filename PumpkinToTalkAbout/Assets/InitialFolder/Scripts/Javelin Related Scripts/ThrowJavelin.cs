@@ -11,9 +11,6 @@ using UnityEngine;
 public class ThrowJavelin : MonoBehaviour
 {
     [SerializeField]
-    private GameObject javelinPrefab;
-
-    [SerializeField]
     private Transform pitchforkSpawnLocation;
 
     private GameObject eventManager;
