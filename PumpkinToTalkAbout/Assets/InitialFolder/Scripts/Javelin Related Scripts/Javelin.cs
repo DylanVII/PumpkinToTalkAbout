@@ -173,6 +173,8 @@ public class Javelin : MonoBehaviour
                 
             case "Ghost":
 
+                SoundManager.PlaySound("Stab");
+
                 //Debug.Log("Impaled a ghost boi");
 
                 eventManager.GetComponent<EventManager>().AddToGhostHitCount();

@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    AudioSource s;
+    static AudioSource s;
+    public static AudioClip stabSound, catchSound, throwSound, clinkSound;
 
     // Start is called before the first frame update
     void Start()
     {
         s = GetComponent<AudioSource>();
 
-
+        stabSound = Resources.Load<AudioClip>("Stab");
     }
 
     // Update is called once per frame
@@ -29,5 +30,16 @@ public class AudioManager : MonoBehaviour
         {
             s.pitch = 1f;
         }
+    }
+
+    public static void PlaySound(string clip)
+    {
+        switch (clip)
+        {
+            case "Stab":
+                s.PlayOneShot(stabSound);
+                break;
+        } 
+
     }
 }
