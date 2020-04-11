@@ -614,17 +614,17 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0.603714
           value: 1
-          inSlope: -2.5234299
-          outSlope: -2.5234299
+          inSlope: -1.0402757
+          outSlope: -1.0402757
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0
-          inSlope: -2.5234299
-          outSlope: -2.5234299
+          value: 0.5877533
+          inSlope: -1.0402757
+          outSlope: -1.0402757
           tangentMode: 34
           weightedMode: 0
           inWeight: 0.33333334
@@ -1361,8 +1361,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
-        key1: {r: 1, g: 0.01764706, b: 0.01764706, a: 0}
+        key0: {r: 0.5235849, g: 1, b: 0.8782845, a: 1}
+        key1: {r: 0.75, g: 0.9713465, b: 1, a: 0}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1530,8 +1530,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 3
-    tilesY: 3
+    tilesX: 2
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 2
@@ -2680,7 +2680,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -3935,7 +3935,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 0.5
     lifetime:

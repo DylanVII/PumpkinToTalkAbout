@@ -32,6 +32,8 @@ public class ThrowJavelin : MonoBehaviour
     [Header("Farmer's Inventory")]
     public List<GameObject> toolInventory;
 
+    private List<GameObject> instantiatedTools;
+
 
     public void Start()
     {
@@ -44,7 +46,8 @@ public class ThrowJavelin : MonoBehaviour
         if (!anim && GetComponent<Animator>())
             anim = GetComponent<Animator>();
 
-        
+
+        instantiatedTools = new List<GameObject>();
         InstantiateToolsInInventory();
     }
 
@@ -60,10 +63,13 @@ public class ThrowJavelin : MonoBehaviour
     {
         anim.SetTrigger("triggerThrow");
 
-        GameObject javelin = toolInventory[0];
+        GameObject javelin = instantiatedTools[0];
+
+        javelin.SetActive(true);
 
         javelin.GetComponent<Rigidbody>().velocity = transform.forward * throwStrength;
-        javelin.transform.Rotate(new Vector3(0, 0, 0));
+        javelin.transform.rotation = transform.rotation;
+        javelin.transform.position = pitchforkSpawnLocation.position;
 
         Javelin javelinScript = javelin.GetComponent<Javelin>();
 
@@ -75,7 +81,7 @@ public class ThrowJavelin : MonoBehaviour
     /* InstantiateToolsInInventory()
      * -----------------------------
      * Instantiates and disables all GameObjects in the Farmer's inventory.
-     * Like a poor-man's object pool.
+     * A poor-man's object pool.
      * Can fully support a single projectile, but still needs work to support multiple.
      * Intended for Pitchforks ONLY, but doesn't currently have a way to filter.
      */
@@ -85,6 +91,9 @@ public class ThrowJavelin : MonoBehaviour
         {
             Debug.Log("Instantiated a " + tool.name);
             GameObject javelin = Instantiate(tool, pitchforkSpawnLocation.position, transform.rotation, null);
+            
+            instantiatedTools.Add(javelin);
+
             javelin.SetActive(false);
         }
                 
