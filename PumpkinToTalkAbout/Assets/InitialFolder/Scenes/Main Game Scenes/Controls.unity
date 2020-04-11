@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 324, y: -159}
-  m_SizeDelta: {x: 115.59, y: 30}
+  m_AnchoredPosition: {x: 318.9, y: -159}
+  m_SizeDelta: {x: 60.16, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488415841
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.34117648}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.34117648}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_SelectedColor: {r: 1, g: 0.995283, b: 0.995283, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1126,8 +1126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323, y: -159}
-  m_SizeDelta: {x: 56.18, y: 30}
+  m_AnchoredPosition: {x: -323.44, y: -159}
+  m_SizeDelta: {x: 52.12, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079137097
 MonoBehaviour:
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.34117648}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.34117648}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
